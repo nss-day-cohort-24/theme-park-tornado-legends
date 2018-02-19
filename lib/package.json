@@ -1,0 +1,31 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "devDependencies": {
+    "browserify": "^15.2.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1",
+    "matchdep": "^2.0.0"
+  },
+  "description": "NPM package for Theme Park Group Project",
+  "main": "../index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nss-day-cohort-24/theme-park-tornado-legends.git"
+  },
+  "author": "Taylor B, Mike, Lindsay, Ben, Jeremy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-24/theme-park-tornado-legends.git"
+  },
+  "homepage": "https://github.com/nss-day-cohort-24/theme-park-tornado-legends.git#readme",
+  "dependencies": {}
+}
