@@ -27,5 +27,9 @@
     "url": "https://github.com/nss-day-cohort-24/theme-park-tornado-legends.git"
   },
   "homepage": "https://github.com/nss-day-cohort-24/theme-park-tornado-legends.git#readme",
-  "dependencies": {}
+  "dependencies": {
+    "@firebase/app": "^0.1.9",
+    "@firebase/database": "^0.1.10",
+    "firebase": "^3.6.9"
+  }
 }
