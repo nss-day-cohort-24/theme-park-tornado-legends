@@ -1,18 +1,11 @@
 
+
 // color vars
-$red: #FF0000;
-$orange: #FF6C00;
-$yellow-orange: #FFC400;
-$yellow: #FFE200;
-$green: #27FF00;
-$blue: #0058FF;
-$purple: #B100FF;
-$pink: #FF38C2;
 $heading-color: #000;
 $body-color:  #3E3E3E;
 
 // font-family vars
-$heading-font: 'Press Start 2P', cursive;
+$heading-font: 'Press Start 2P', 'Courier New', Courier, monospace;
 $sans-serif:  'PT Sans', sans-serif;
 
 // border vars
@@ -30,7 +23,6 @@ h1 {
     font-family: $heading-font;
     font-size: 40px;
     color: $heading-color;
-    background-color: $red;
 }
 
 h2 {
@@ -52,10 +44,10 @@ p {
     color: $body-color; 
 }
 
-// i {
-//     font-size: 20px;
-//     color: $body-color;
-// }
+i {
+    font-size: 20px;
+    color: $body-color;
+}
 
 ////////// END BASE STYLES
 
@@ -69,7 +61,7 @@ p {
   font-size: 20px;
   background: #ffffff;
   padding: 10px 10px 10px 10px;
-  border: solid $pink 3px;
+  border: solid #000 3px;
   text-decoration: none;
 }
 
@@ -83,7 +75,7 @@ p {
   opacity: $fifty-percent;
   background: #ffffff;
   padding: 10px 10px 10px 10px;
-  border: solid $orange 3px;
+  border: solid #000 3px;
   text-decoration: none;
 }
 
