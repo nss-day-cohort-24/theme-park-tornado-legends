@@ -1,0 +1,94 @@
+
+// color vars
+$red: #FF0000;
+$orange: #FF6C00;
+$yellow-orange: #FFC400;
+$yellow: #FFE200;
+$green: #27FF00;
+$blue: #0058FF;
+$purple: #B100FF;
+$pink: #FF38C2;
+$heading-color: #000;
+$body-color:  #3E3E3E;
+
+// font-family vars
+$heading-font: 'Press Start 2P', cursive;
+$sans-serif:  'PT Sans', sans-serif;
+
+// border vars
+$heading-border: 3px solid $heading-color;
+$text-area-border: 1px solid $body-color;
+
+// opacity vars
+$fifty-percent: 0.5; 
+
+////////// END VARS
+
+
+// base styles
+h1 {
+    font-family: $heading-font;
+    font-size: 40px;
+    color: $heading-color;
+    background-color: $red;
+}
+
+h2 {
+    font-family: $sans-serif;
+    font-size: 20px;
+    color: $heading-color;
+
+}
+
+h3 {
+    font-family: $heading-font;
+    font-size: 20px;
+    color: $heading-color;
+}
+
+p {
+    font-family: $sans-serif;
+    font-size: 15px;
+    color: $body-color; 
+}
+
+// i {
+//     font-size: 20px;
+//     color: $body-color;
+// }
+
+////////// END BASE STYLES
+
+// classes
+.btn {
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: $heading-font;
+  color: #000;
+  font-size: 20px;
+  background: #ffffff;
+  padding: 10px 10px 10px 10px;
+  border: solid $pink 3px;
+  text-decoration: none;
+}
+
+.btn-map {
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: $heading-font;
+  color: #000;
+  font-size: 20px;
+  opacity: $fifty-percent;
+  background: #ffffff;
+  padding: 10px 10px 10px 10px;
+  border: solid $orange 3px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+////////// END CLASSES
