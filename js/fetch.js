@@ -4,17 +4,15 @@ console.log('fetch console test');
 
 
 let firebase = require("../lib/node_modules/firebase");
-let config = require('./config');
+require("../lib/node_modules/firebase/auth");
+require("../lib/node_modules/firebase/database");
 
-// var config = {
-//   apiKey: "AIzaSyBe3OAcqFN_W0Pkv5WxU7Ky1MTAQs9vwaw",
-//   authDomain: "fir-test-run.firebaseapp.com",
-//   databaseURL: "https://fir-test-run.firebaseio.com"
-// };
+let database;
+let firebaseData;
 
 
-function getFirebaseData(){
-    console.log('get firebase call');
+function areaData(id){
+    console.log('get area call');
   return new Promise((resolve,reject) => {
     var loader = new XMLHttpRequest();
     
@@ -25,17 +23,18 @@ function getFirebaseData(){
     loader.addEventListener('error', function(){
       reject();
     });
-    loader.open("GET", "https://fir-test-run.firebaseio.com/areas/.json");
+    loader.open("GET", `https://tornado-legends-theme-park.firebaseio.com/areas.json?orderBy="id"&equalTo=${id}`);
     loader.send();
   });
 }
 
-getFirebaseData()
+areaData(1)
   // Then gets executed when promise is resolved or rejected
   .then(
     // The first callback function will be invoked when you resolve
     function(json_data) {
-      console.log("API call successful and responded with", json_data);
+      firebaseData = json_data;
+      console.log("API call successful and responded with", firebaseData);
     },
     // The second callback function will be invoked when you reject
     function(json_data) {
@@ -44,5 +43,17 @@ getFirebaseData()
   );
 
 
-firebase.initializeApp(config);
-module.exports = {firebase, getFirebaseData};
+
+
+
+  // var config = {
+  //   apiKey: "AIzaSyBp7JllmXmYthaiSo7LWqto8VzlvnaT9Ho",
+  //   authDomain: "tornado-legends-theme-park.firebaseapp.com",
+  //   databaseURL: "https://tornado-legends-theme-park.firebaseio.com",
+  //   projectId: "tornado-legends-theme-park",
+  //   storageBucket: "tornado-legends-theme-park.appspot.com",
+  //   messagingSenderId: "376888521537"
+  // };
+  // firebase.initializeApp(config);
+
+module.exports = {firebase, areaData};

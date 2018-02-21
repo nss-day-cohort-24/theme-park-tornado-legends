@@ -1,6 +1,7 @@
 "use strict";
 
+let config = require('./config');
 let db = require("./fetch");
-let firebaseCall = db.getFirebaseData();
+// let firebaseCall = db.getFirebaseData();
 
-console.log(db);
+// console.log(db);
