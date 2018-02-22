@@ -125,9 +125,9 @@ function printTimeData() {
 
 
 
-// console.log("this is working bitchh",currentTime());
 
-// checkTime();
-timeFunction();
-// checkTime();
+
+// THIS IS THE ENTIRE FUNCTION! IT WILL WORK WHEN YOU UNCOMMENT IT!
+// timeFunction();
+
 module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray};
