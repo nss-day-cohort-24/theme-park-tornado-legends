@@ -91,8 +91,6 @@ attractionData()
                                           indHr = indHr.toString();
                                       
                                         }
-                                    // console.log("indHr",indHr);
-                                    // return indHr;
                                     checkTime();
                                     
                             }
