@@ -9,6 +9,7 @@ let counter = 1;
 
 // let area1Print = document.getElementById('area1').addEventListener('click', runPrint);
 
+runPrint();
 
 function runPrint(){
     console.log(event);
