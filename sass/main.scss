@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// color vars
+$heading-color: #000;
+$body-color:  #3E3E3E;
+
+// font-family vars
+$heading-font: 'Press Start 2P', 'Courier New', Courier, monospace;
+$sans-serif:  'PT Sans', sans-serif;
+
+// border vars
+$heading-border: 3px solid $heading-color;
+$text-area-border: 1px solid $body-color;
+
+// opacity vars
+$fifty-percent: 0.5; 
+
+////////// END VARS
+
+
+// base styles
+h1 {
+    font-family: $heading-font;
+    font-size: 40px;
+    color: $heading-color;
+}
+
+h2 {
+    font-family: $sans-serif;
+    font-size: 20px;
+    color: $heading-color;
+
+}
+
+h3 {
+    font-family: $heading-font;
+    font-size: 20px;
+    color: $heading-color;
+}
+
+p {
+    font-family: $sans-serif;
+    font-size: 15px;
+    color: $body-color; 
+}
+
+i {
+    font-size: 20px;
+    color: $body-color;
+}
+
+footer {
+    // display
+        background-color: $heading-color;
+        padding: 14px 0 14px 0;
+    // flexbox
+        display: flex;
+        display: -webkit-flex;
+        align-items: flex-end;
+        justify-content: space-around;
+    // fixed
+        position: fixed; 
+        bottom: 0; 
+        width: 100%;  
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a .active {
+    color: #ffe200;
+}
+
+////////// END BASE STYLES
+
+// classes
+.btn {
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: $heading-font;
+  color: #000;
+  font-size: 20px;
+  background: #ffffff;
+  padding: 10px 10px 10px 10px;
+  border: solid #000 3px;
+  text-decoration: none;
+}
+
+.btn-map {
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: $heading-font;
+  color: #000;
+  font-size: 20px;
+  opacity: $fifty-percent;
+  background: #ffffff;
+  padding: 10px 10px 10px 10px;
+  border: solid #000 3px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+////////// END CLASSES
