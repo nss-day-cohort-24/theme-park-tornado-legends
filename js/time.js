@@ -3,6 +3,9 @@
 
 let h;
 let indHr;
+let aNames;
+let namesArray = [];
+let printDiv = document.getElementById("print");
 
 function currentTime(){
     let d = new Date();
@@ -39,51 +42,65 @@ function checkTime(){
   if (h == indHr){
 
     console.log("yeaaaaaaaa buddddyyy");
+
+    console.log("a",aNames);
+
+    namesArray.push(aNames);
+
+    console.log(namesArray);
+
+    printTimeData();
+
+
+
   }
   }
 function timeFunction(){
-  
-  attractionData().then(
-      function(json_data) {
-        json_data.forEach((item)=>{
-          if(item.hasOwnProperty("times")){
-                let aTimes = [];
-                aTimes.push(item.times);
 
-                        for(let i=0;i < aTimes.length;i++){
-                        let a = aTimes[i];
+attractionData()
+  // Then gets executed when promise is resolved or rejected
+  .then(
+    // The first callback function will be invoked when you resolve
+    function(json_data) {
+      json_data.forEach((item)=>{
+        // console.log("times,",item.times);
+        // aTimes.push(item.times);
+        if(item.hasOwnProperty("times")){
+              let aTimes = [];
+              aTimes.push(item.times);
+              aNames = item.name;
 
-                              for(let z=0;z<a.length;z++){
+                      for(let i=0;i < aTimes.length;i++){
+                      let a = aTimes[i];
+
+                // console.log(aTimes);
+                            // console.log("getFuckked",aTimes[i]);
+                            for(let z=0;z<a.length;z++){
+                                        // console.log("individual time",a[z]);
+                                        let a = aTimes[i];
+                                        let indTime = a[z];
+                                        indHr = indTime.substring(0, 2);
+
+                                        if(indHr.includes(":")){
+                                          indHr = indHr.slice(0, 1);
+                                          // console.log("new indHr", indHr);
+                                        }
+                                        if(a[z].includes("PM") && indHr !== "12"){
+                                          indHr = parseInt(indHr);
+                                          indHr = indHr + 12;
+                                          indHr = indHr.toString();
                                       
-                                          let indTime = a[z];
-                                          indHr = indTime.substring(0, 2);
-
-                                          if(indHr.includes(":")){
-                                            indHr = indHr.slice(0, 1);
-                                            // console.log("new indHr", indHr);
-                                          }
-                                          if(a[z].includes("PM") && indHr !== "12"){
-                                            indHr = parseInt(indHr);
-                                            indHr = indHr + 12;
-                                            indHr = indHr.toString();
-                                        
-                                          }
-
-                                      // console.log("indHr",indHr);
-                                      // return indHr;
-                                      checkTime();
+                                        }
+                                    // console.log("indHr",indHr);
+                                    // return indHr;
+                                    checkTime();
                                     
                             }
 
                       }
         }
-        // let aTimes = item.times;
-        // console.log(aTimes);
-        // for (let i=0;i < aTimes.length;i++){
-        //     console.log("bitch please");
-        // }
       });
-      //  console.log("API call successful and responded with", json_data);
+       console.log("API call successful and responded with", json_data);
     },
     // The second callback function will be invoked when you reject
     function(json_data) {
@@ -93,10 +110,21 @@ function timeFunction(){
 }
 
 
+function printTimeData() {
+  printDiv.innerHTML = `<h1>Current time</h1>`;
+    for (let q=0;q<namesArray.length;q++){
+    let currentName = namesArray[q];
+    printDiv.innerHTML += `${currentName}<br>`;
+
+  }
+}
+
+
+
 
 // console.log("this is working bitchh",currentTime());
 
-checkTime();
+// checkTime();
 timeFunction();
 // checkTime();
-module.exports = {currentTime, attractionData, checkTime, timeFunction};
+module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray};
