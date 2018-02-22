@@ -43,11 +43,12 @@ attractionData()
 
                 // console.log(aTimes);
                             console.log("getFuckked",aTimes[i]);
-                                        console.log(a);
+                            for(let z=0;z<a.length;z++){
+                                        console.log("individual time",a[z]);
                                         // let a = aTimes[i];
                                         // let hr = a.substring(1, 2);
 
-
+                            }
                             // console.log(hr);
                       }
         }
