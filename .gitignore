@@ -1,5 +1,6 @@
 lib/node_modules
 lib/.sass-cache
+lib/package-lock.json
 .DS_Store
 .vscode/
 css/styles.css
