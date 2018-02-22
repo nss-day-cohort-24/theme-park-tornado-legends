@@ -9,10 +9,10 @@ function currentTime(){
     let c = d.toLocaleTimeString();
     console.log(c);
     h = d.getHours();
-    console.log("hours",h);
-    return h;
+    // console.log("hours",h);
+    // return h;
 }
-
+currentTime();
 function attractionData(){
     console.log('get area call');
   return new Promise((resolve,reject) => {
@@ -32,14 +32,15 @@ function attractionData(){
 
 function checkTime(){
   // h = currentTime;
-  // console.log(h);
-  // console.log(indHr);
+  console.log(h);
+  console.log(indHr);
   if (h == indHr){
+
     console.log("yeaaaaaaaa buddddyyy");
   }
   }
 function timeFunction(){
-checkTime();
+
 attractionData()
   // Then gets executed when promise is resolved or rejected
   .then(
@@ -58,7 +59,7 @@ attractionData()
                 // console.log(aTimes);
                             // console.log("getFuckked",aTimes[i]);
                             for(let z=0;z<a.length;z++){
-                                        console.log("individual time",a[z]);
+                                        // console.log("individual time",a[z]);
                                         let indTime = a[z];
                                         indHr = indTime.substring(0, 2);
 
@@ -73,7 +74,7 @@ attractionData()
                                       
                                         }
 
-                                    console.log("indHr",indHr);
+                                    // console.log("indHr",indHr);
                                     // return indHr;
                                     checkTime();
                                     
@@ -98,9 +99,9 @@ attractionData()
 
 
 
-console.log("this is working bitchh",currentTime());
+// console.log("this is working bitchh",currentTime());
 
-
-// timeFunction();
+checkTime();
+timeFunction();
 // checkTime();
 module.exports = {currentTime, attractionData, checkTime, timeFunction};
