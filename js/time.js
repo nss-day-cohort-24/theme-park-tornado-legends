@@ -3,6 +3,9 @@
 
 let h;
 let indHr;
+let aNames;
+let namesArray = [];
+let printDiv = document.getElementById("print");
 
 function currentTime(){
     let d = new Date();
@@ -37,6 +40,17 @@ function checkTime(){
   if (h == indHr){
 
     console.log("yeaaaaaaaa buddddyyy");
+
+    console.log("a",aNames);
+
+    namesArray.push(aNames);
+
+    console.log(namesArray);
+
+    printTimeData();
+
+
+
   }
   }
 function timeFunction(){
@@ -52,6 +66,7 @@ attractionData()
         if(item.hasOwnProperty("times")){
               let aTimes = [];
               aTimes.push(item.times);
+              aNames = item.name;
 
                       for(let i=0;i < aTimes.length;i++){
                       let a = aTimes[i];
@@ -60,6 +75,7 @@ attractionData()
                             // console.log("getFuckked",aTimes[i]);
                             for(let z=0;z<a.length;z++){
                                         // console.log("individual time",a[z]);
+                                        let a = aTimes[i];
                                         let indTime = a[z];
                                         indHr = indTime.substring(0, 2);
 
@@ -73,7 +89,6 @@ attractionData()
                                           indHr = indHr.toString();
                                       
                                         }
-
                                     // console.log("indHr",indHr);
                                     // return indHr;
                                     checkTime();
@@ -98,10 +113,21 @@ attractionData()
 }
 
 
+function printTimeData() {
+  printDiv.innerHTML = `<h1>Current time</h1>`;
+    for (let q=0;q<namesArray.length;q++){
+    let currentName = namesArray[q];
+    printDiv.innerHTML += `${currentName}<br>`;
+
+  }
+}
+
+
+
 
 // console.log("this is working bitchh",currentTime());
 
-checkTime();
+// checkTime();
 timeFunction();
 // checkTime();
-module.exports = {currentTime, attractionData, checkTime, timeFunction};
+module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray};
