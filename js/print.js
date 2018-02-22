@@ -5,7 +5,7 @@ let areaData = fetchData.areaData;
 let attractionData = fetchData.attractionData;
 let printDiv = document.getElementById('print');
 // let id = 4;
-let counter = 1;
+let counter = 6;
 
 // let area1Print = document.getElementById('area1').addEventListener('click', runPrint);
 
@@ -38,7 +38,9 @@ function attractionDataPrint(id){
   attractionData(id)
   .then(
   (data) => {
-      printDiv.innerHTML = `<h2>AREA${id}</h2>`;
+      // printDiv.innerHTML = `<img src="/images/area_${id}.png" class="area-img"><h2 id="${id}">AREA ${id}</h2>`;
+      printDiv.innerHTML = `<div class="area-img${id}-div"></div><h2 id="${id}">AREA ${id}</h2>`;
+
     //   console.log("attractions resolve data", data);
       Object.keys(data).forEach((item) =>{
                 var index = (data[item]);

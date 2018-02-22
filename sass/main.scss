@@ -6,14 +6,14 @@
 // color vars
 $heading-color: #000;
 $body-color:  #3E3E3E;
-$red: #FF0000;
-$orn: #FF6C00;
-$yelOrn: #FFC400;
-$yell: #FFE200;
-$grn: #27FF00;
-$blu: #0058FF;
-$purp: #8100FF;
-$fus: #FF38C2;
+$a1: rgba(255, 0, 0, 0.5);
+$a2: rgba(255, 106, 0, 0.5);
+$a3: rgba(255, 196, 0, 0.5);
+$a4: rgba(255, 225, 0, 0.5);
+$a5: rgba(38, 255, 0, 0.5);
+$a6: rgba(0, 89, 255, 0.5);
+$a7: rgba(128, 0, 255, 0.5);
+$a8: rgba(255, 56, 195, 0.5);
 
 
 
@@ -39,16 +39,19 @@ h1 {
 }
 
 h2 {
-    font-family: $sans-serif;
-    font-size: 20px;
+    font-family: $heading-font;
+    font-size: 35px;
     color: $heading-color;
-
+    text-align: center;
+    padding: 1em 0;
 }
 
 h3 {
     font-family: $heading-font;
-    font-size: 20px;
+    font-size: 15px;
     color: $heading-color;
+    padding: 1.4em .4em;
+    border-top: 1px solid black;
 }
 
 p {
@@ -62,10 +65,93 @@ i {
     color: $body-color;
 }
 
+li {
+    font-family: $sans-serif;
+    font-size: .8em;
+    padding: 0 .4em;
+}
+
+img.area-img {
+    // width: 100%;
+    // position: absolute;
+    // clip: rect(0, 100px, 200px, 0);
+}
+
+// header background-color styles
+h2[id='1'] {
+    background-color: $a1;
+}
+
+.area-img1-div{
+height: 10em;
+}
+
+h2[id='2'] {
+    background-color: $a2;
+}
+
+.area-img2-div{
+    
+}
+
+h2[id='3'] {
+    background-color: $a3;
+}
+
+.area-img3-div{
+    
+}
+
+h2[id='4'] {
+    background-color: $a4;
+}
+
+.area-img4-div{
+    
+}
+
+h2[id='5'] {
+    background-color: $a5;
+}
+
+.area-img5-div{
+    
+}
+
+h2[id='6'] {
+    background-color: $a6;
+}
+
+.area-img6-div{
+    
+}
+
+h2[id='7'] {
+    background-color: $a7;
+}
+
+.area-img7-div{
+    height: 10em;
+    background-image: url("/images/area_7.png");
+    background-repeat: no-repeat;
+    background-size: 395px 300px;
+    // background-position: top right;
+    background-position: -20px 20px;
+}
+
+h2[id='8'] {
+    background-color: $a8;
+}
+
+.area-img8-div{
+    
+}
+
 footer {
     // display
         background-color: $heading-color;
         padding: 14px 0 14px 0;
+        margin: 2em 0 0 0; 
     // flexbox
         display: flex;
         display: -webkit-flex;
@@ -85,6 +171,8 @@ footer a {
 footer a .active {
     color: #ffe200;
 }
+
+
 
 ////////// END BASE STYLES
 
@@ -156,4 +244,8 @@ footer a .active {
     width: 100px;
 }
 
+
+#print {
+    margin-bottom: 4em;
+}
 //// END WELCOME PAGE IDs ////
