@@ -1,4 +1,7 @@
-
+* {
+    margin: 0;
+    padding: 0;
+}
 
 // color vars
 $heading-color: #000;
@@ -47,6 +50,30 @@ p {
 i {
     font-size: 20px;
     color: $body-color;
+}
+
+footer {
+    // display
+        background-color: $heading-color;
+        padding: 14px 0 14px 0;
+    // flexbox
+        display: flex;
+        display: -webkit-flex;
+        align-items: flex-end;
+        justify-content: space-around;
+    // fixed
+        position: fixed; 
+        bottom: 0; 
+        width: 100%;  
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a .active {
+    color: #ffe200;
 }
 
 ////////// END BASE STYLES
