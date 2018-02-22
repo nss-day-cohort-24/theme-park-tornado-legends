@@ -7,7 +7,7 @@ let firebase = require("../lib/node_modules/firebase");
 require("../lib/node_modules/firebase/auth");
 require("../lib/node_modules/firebase/database");
 
-require("./listall");
+
 
 let database;
 let firebaseData;

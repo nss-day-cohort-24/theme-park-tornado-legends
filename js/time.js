@@ -1,13 +1,21 @@
 "use strict";
 
+function currentTime(){
+    let d = new Date();
+    let c = d.toLocaleTimeString();
+    console.log(c);
+    let h = d.getHours();
+    console.log("hours",h);
+}
+
 function attractionData(id){
-    console.log('get attraction call');
+    console.log('get area call');
   return new Promise((resolve,reject) => {
     var loader = new XMLHttpRequest();
     
     loader.addEventListener('load', function(){
-      var attractionList = JSON.parse(this.responseText);
-      resolve(attractionList);
+      var areasList = JSON.parse(this.responseText);
+      resolve(areasList);
     });
     loader.addEventListener('error', function(){
       reject();
@@ -23,7 +31,10 @@ attractionData()
     // The first callback function will be invoked when you resolve
     function(json_data) {
       json_data.forEach((item)=>{
-        console.log(item.name);
+        console.log(item.times);
+        for (let i=0;i<item.times.length;i++){
+            console.log("bitch please");
+        }
       });
        console.log("API call successful and responded with", json_data);
     },
@@ -33,4 +44,8 @@ attractionData()
     }
   );
 
-module.exports = {attractionData};
+
+
+currentTime();
+
+module.exports = {currentTime, attractionData};
