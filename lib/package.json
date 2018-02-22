@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nss-day-cohort-24/theme-park-tornado-legends.git"
+    "url": "git+https://github.com/nss-day-cohort-24/theme-park-tornado-legends.git"
   },
   "author": "Taylor B, Mike, Lindsay, Ben, Jeremy",
   "license": "ISC",

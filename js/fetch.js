@@ -16,7 +16,7 @@ function areaData(id){
   return new Promise((resolve,reject) => {
     var loader = new XMLHttpRequest();
     
-    loader.addEventListener('load', function(){
+      loader.addEventListener('load', function(){
       var areasList = JSON.parse(this.responseText);
       resolve(areasList);
     });
