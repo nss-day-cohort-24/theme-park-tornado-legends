@@ -1,11 +1,16 @@
 "use strict";
 
+
+let h;
+let indHr;
+
 function currentTime(){
     let d = new Date();
     let c = d.toLocaleTimeString();
     console.log(c);
-    let h = d.getHours();
+    h = d.getHours();
     console.log("hours",h);
+    return h;
 }
 
 function attractionData(){
@@ -25,6 +30,16 @@ function attractionData(){
   });
 }
 
+function checkTime(){
+  // h = currentTime;
+  // console.log(h);
+  // console.log(indHr);
+  if (h == indHr){
+    console.log("yeaaaaaaaa buddddyyy");
+  }
+  }
+function timeFunction(){
+checkTime();
 attractionData()
   // Then gets executed when promise is resolved or rejected
   .then(
@@ -32,7 +47,6 @@ attractionData()
     function(json_data) {
       json_data.forEach((item)=>{
         // console.log("times,",item.times);
-        var container = document.getElementById("container");
         // aTimes.push(item.times);
         if(item.hasOwnProperty("times")){
               let aTimes = [];
@@ -42,14 +56,29 @@ attractionData()
                       let a = aTimes[i];
 
                 // console.log(aTimes);
-                            console.log("getFuckked",aTimes[i]);
+                            // console.log("getFuckked",aTimes[i]);
                             for(let z=0;z<a.length;z++){
                                         console.log("individual time",a[z]);
-                                        // let a = aTimes[i];
-                                        // let hr = a.substring(1, 2);
+                                        let indTime = a[z];
+                                        indHr = indTime.substring(0, 2);
 
+                                        if(indHr.includes(":")){
+                                          indHr = indHr.slice(0, 1);
+                                          // console.log("new indHr", indHr);
+                                        }
+                                        if(a[z].includes("PM") && indHr !== "12"){
+                                          indHr = parseInt(indHr);
+                                          indHr = indHr + 12;
+                                          indHr = indHr.toString();
+                                      
+                                        }
+
+                                    console.log("indHr",indHr);
+                                    // return indHr;
+                                    checkTime();
+                                    
                             }
-                            // console.log(hr);
+
                       }
         }
         // let aTimes = item.times;
@@ -65,10 +94,13 @@ attractionData()
       console.log("API call not successful");
     }
   );
+}
 
 
 
+console.log("this is working bitchh",currentTime());
 
-currentTime();
 
-module.exports = {currentTime, attractionData};
+timeFunction();
+// checkTime();
+module.exports = {currentTime, attractionData, checkTime};
