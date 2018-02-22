@@ -4,7 +4,9 @@
 let h;
 let indHr;
 let aNames;
+let aLoc;
 let namesArray = [];
+let locationArray = [];
 let printDiv = document.getElementById("print");
 let timeHead = `
 <div class="header-bkg">
@@ -134,6 +136,8 @@ function checkTime(){
 
     namesArray.push(aNames);
 
+    locationArray.push(aLoc);
+
     console.log(namesArray);
 
     printTimeData();
@@ -156,6 +160,7 @@ attractionData()
               let aTimes = [];
               aTimes.push(item.times);
               aNames = item.name;
+              aLoc = item.location;
 
                       for(let i=0;i < aTimes.length;i++){
                       let a = aTimes[i];
@@ -200,7 +205,10 @@ function printTimeData() {
   printDiv.innerHTML += `<h1>Current time</h1>`;
     for (let q=0;q<namesArray.length;q++){
     let currentName = namesArray[q];
+    let currentLocation = locationArray[q];
     printDiv.innerHTML += `${currentName}<br>`;
+
+
 
   }
 }
@@ -213,6 +221,6 @@ function printTimeData() {
 // THIS IS THE ENTIRE FUNCTION! IT WILL WORK WHEN YOU UNCOMMENT IT!
 timeFunction();
 
-document.body.addEventListener('mousewheel', timeFunction, true); 
+document.body.addEventListener('keypress', timeFunction, true); 
 
 module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray, timeHead};
