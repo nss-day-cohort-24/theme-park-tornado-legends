@@ -16,6 +16,8 @@ function currentTime(){
     // return h;
 }
 currentTime();
+
+
 function attractionData(){
     console.log('get area call');
   return new Promise((resolve,reject) => {
@@ -36,7 +38,7 @@ function attractionData(){
 function checkTime(){
   // h = currentTime;
   console.log(h);
-  console.log(indHr);
+  console.log("indHr checkTime", indHr);
   if (h == indHr){
 
     console.log("yeaaaaaaaa buddddyyy");
@@ -89,19 +91,12 @@ attractionData()
                                           indHr = indHr.toString();
                                       
                                         }
-                                    // console.log("indHr",indHr);
-                                    // return indHr;
                                     checkTime();
                                     
                             }
 
                       }
         }
-        // let aTimes = item.times;
-        // console.log(aTimes);
-        // for (let i=0;i < aTimes.length;i++){
-        //     console.log("bitch please");
-        // }
       });
        console.log("API call successful and responded with", json_data);
     },
