@@ -4,6 +4,7 @@ let fetchData = require("./fetch");
 let areaData = fetchData.areaData; 
 let attractionData = fetchData.attractionData;
 let printDiv = document.getElementById('print');
+let timeDiv = require("./time");
 // let id = 4;
 let counter = 1;
 
@@ -54,6 +55,10 @@ function attractionDataPrint(id){
       console.log('attractions data did not load');
   }
   );
+}
+
+function timeDataPrint(){
+  timeDiv.timefunction();
 }
 
 
