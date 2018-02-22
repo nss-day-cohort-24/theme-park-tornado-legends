@@ -101,6 +101,6 @@ attractionData()
 console.log("this is working bitchh",currentTime());
 
 
-timeFunction();
+// timeFunction();
 // checkTime();
-module.exports = {currentTime, attractionData, checkTime};
+module.exports = {currentTime, attractionData, checkTime, timeFunction};
