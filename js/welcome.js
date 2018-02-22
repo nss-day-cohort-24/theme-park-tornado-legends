@@ -20,3 +20,4 @@ function assignListener(){
 
 
 module.exports = {welcome, areasHomepagePrint};
+
