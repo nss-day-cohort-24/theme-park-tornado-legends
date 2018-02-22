@@ -8,7 +8,7 @@ function currentTime(){
     console.log("hours",h);
 }
 
-function attractionData(id){
+function attractionData(){
     console.log('get area call');
   return new Promise((resolve,reject) => {
     var loader = new XMLHttpRequest();
@@ -31,9 +31,29 @@ attractionData()
     // The first callback function will be invoked when you resolve
     function(json_data) {
       json_data.forEach((item)=>{
-        console.log(item.times);
-        // let aTimes = [];
-        // for (let i=0;i<aTimes.length;i++){
+        // console.log("times,",item.times);
+        var container = document.getElementById("container");
+        // aTimes.push(item.times);
+        if(item.hasOwnProperty("times")){
+              let aTimes = [];
+              aTimes.push(item.times);
+
+                      for(let i=0;i < aTimes.length;i++){
+                      let a = aTimes[i];
+
+                // console.log(aTimes);
+                            console.log("getFuckked",aTimes[i]);
+                                        console.log(a);
+                                        // let a = aTimes[i];
+                                        // let hr = a.substring(1, 2);
+
+
+                            // console.log(hr);
+                      }
+        }
+        // let aTimes = item.times;
+        // console.log(aTimes);
+        // for (let i=0;i < aTimes.length;i++){
         //     console.log("bitch please");
         // }
       });
@@ -44,6 +64,7 @@ attractionData()
       console.log("API call not successful");
     }
   );
+
 
 
 
