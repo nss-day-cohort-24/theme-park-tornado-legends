@@ -125,7 +125,7 @@ footer a .active {
 //// WELCOME PAGE IDs ////
 
 #welcomeDiv {
-    height: 90vh;
+    height: 91vh;
     width: 100%;
     text-align: center;
     background-image: url(../images/map-home.png);
@@ -139,7 +139,7 @@ footer a .active {
     font-size: 30px;
     color: white;
     text-shadow: $text-shadow;
-    padding: 1em 0;
+    padding: .75em 0 .5em 0;
 }
 
 #welcomeCall {
@@ -147,12 +147,13 @@ footer a .active {
     font-size: 50px;
     color: white;
     text-shadow: $text-shadow;
-    padding: 1em 0;
+    padding-top: .5em;
+    line-height: 1.9;
 }
 
 #logo {
     float: left;
-    padding: 1em;
+    padding: 1em .5em 0 .5em;
     width: 100px;
 }
 
@@ -166,5 +167,4 @@ footer a .active {
     left: 7.5em;
     bottom: 68px;
 }
-
 //// END WELCOME PAGE IDs ////
