@@ -32,9 +32,10 @@ attractionData()
     function(json_data) {
       json_data.forEach((item)=>{
         console.log(item.times);
-        for (let i=0;i<item.times.length;i++){
-            console.log("bitch please");
-        }
+        // let aTimes = [];
+        // for (let i=0;i<aTimes.length;i++){
+        //     console.log("bitch please");
+        // }
       });
        console.log("API call successful and responded with", json_data);
     },
