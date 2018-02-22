@@ -6,6 +6,93 @@ let indHr;
 let aNames;
 let namesArray = [];
 let printDiv = document.getElementById("print");
+let timeHead = `
+<div class="header-bkg">
+   <div class="select">
+       <select>
+           <option>
+               <p>Current Time</p>
+           </option>
+           <option value="9">
+               <a href="#">
+                   <p>9:00 am - 10:00 am</p>
+               </a>
+           </option>
+           <option value="10">
+               <a href="#">
+                   <p>10:00 am - 11:00 am</p>
+               </a>
+           </option>
+           <option value="11">
+               <a href="#">
+                   <p>11:00 am - 12:00 pm</p>
+               </a>
+           </option>
+           <option value = "12">
+               <a href="#">
+                   <p>12:00 pm - 1:00 pm</p>
+               </a>
+           </option>
+           <option value = "13">
+               <a href="#">
+                   <p>1:00 pm - 2:00 pm</p>
+               </a>
+           </option>
+           <option value="14>
+               <a href="#">
+                   <p>2:00 pm - 3:00 pm</p>
+               </a>
+           </option>
+           <option value="15">
+               <a href="#">
+                   <p>3:00 pm - 4:00 pm</p>
+               </a>
+           </option>
+           <option value="16">
+               <a href="#">
+                   <p>4:00 pm - 5:00 pm</p>
+               </a>
+           </option>
+           <option value="17">
+               <a href="#">
+                   <p>5:00 pm - 6:00 pm</p>
+               </a>
+           </option>
+           <option value="18">
+               <a href="#">
+                   <p>6:00 pm - 7:00 pm</p>
+               </a>
+           </option>
+           <option value="19">
+               <a href="#">
+                   <p>7:00 pm - 8:00 pm</p>
+               </a>
+           </option>
+           <option value="20">
+               <a href="#">
+                   <p>8:00 pm - 9:00 pm</p>
+               </a>
+           </option>
+           <option value="21">
+               <a href="#">
+                   <p>9:00 pm - 10:00 pm</p>
+               </a>
+           </option>
+           <option value="22">
+               <a href="#">
+                   <p>10:00 pm - 11:00 pm</p>
+               </a>
+           </option>
+           <option value="23">
+               <a href="#">
+                   <p>11:00 pm - 12:00 pm</p>
+               </a>
+           </option>
+       </select>
+       <div class="select_arrow">
+       </div>
+   </div>
+</div>`;
 
 function currentTime(){
     let d = new Date();
@@ -54,7 +141,7 @@ function checkTime(){
   }
   }
 function timeFunction(){
-
+namesArray = [];
 attractionData()
   // Then gets executed when promise is resolved or rejected
   .then(
@@ -114,7 +201,8 @@ attractionData()
 
 
 function printTimeData() {
-  printDiv.innerHTML = `<h1>Current time</h1>`;
+  printDiv.innerHTML = `${timeHead}`;
+  printDiv.innerHTML += `<h1>Current time</h1>`;
     for (let q=0;q<namesArray.length;q++){
     let currentName = namesArray[q];
     printDiv.innerHTML += `${currentName}<br>`;
@@ -125,9 +213,11 @@ function printTimeData() {
 
 
 
-
+// console.log(timeHead);
 
 // THIS IS THE ENTIRE FUNCTION! IT WILL WORK WHEN YOU UNCOMMENT IT!
-// timeFunction();
+timeFunction();
 
-module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray};
+document.body.addEventListener('mousewheel', timeFunction, true); 
+
+module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray, timeHead};
