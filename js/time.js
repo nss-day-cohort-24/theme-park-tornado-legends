@@ -47,13 +47,6 @@ attractionData()
     // The first callback function will be invoked when you resolve
     function(json_data) {
       json_data.forEach((item)=>{
-<<<<<<< HEAD
-        console.log("times", item.times);
-        let aTimes = [];
-        for (let i=0;i<aTimes.length;i++){
-            console.log("bitch please");
-        }
-=======
         // console.log("times,",item.times);
         // aTimes.push(item.times);
         if(item.hasOwnProperty("times")){
@@ -94,7 +87,6 @@ attractionData()
         // for (let i=0;i < aTimes.length;i++){
         //     console.log("bitch please");
         // }
->>>>>>> master
       });
       //  console.log("API call successful and responded with", json_data);
     },
