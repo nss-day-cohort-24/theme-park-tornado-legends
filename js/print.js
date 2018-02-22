@@ -3,27 +3,36 @@
 let fetchData = require("./fetch");
 let areaData = fetchData.areaData; 
 let attractionData = fetchData.attractionData;
+let areas = fetchData.areas;
 let printDiv = document.getElementById('print');
 // let id = 4;
 let counter = 6;
+// let counter = 1;
 
-// let area1Print = document.getElementById('area1').addEventListener('click', runPrint);
 
-runPrint();
 
-function runPrint(){
-    console.log(event);
-    counter++;
-    counter = counter % 8;
-    areaDataPrint(counter);
-    attractionDataPrint(counter);
-}
 
+// Areas By ID
+function areasPrint(){
+  areas()
+    .then(
+      function(areas) {
+        console.log("areas ", areas);
+        Object.keys(areas).forEach((item)=>{
+          var index = (areas[item]);
+        });
+      },
+      function(areas) {
+        console.log("areas call fucked up");
+      }
+    );
+  }
+
+
+// Areas By ID
 function areaDataPrint(id){
 areaData(id)
-  // Then gets executed when promise is resolved or rejected
   .then(
-    // The first callback function will be invoked when you resolve
     function(areas) {
       console.log("areas ", areas);
     },
@@ -34,14 +43,21 @@ areaData(id)
   );
 }
 
+
+// ATTRACTIONS BY ID 
 function attractionDataPrint(id){
   attractionData(id)
   .then(
   (data) => {
+    
       // printDiv.innerHTML = `<img src="/images/area_${id}.png" class="area-img"><h2 id="${id}">AREA ${id}</h2>`;
       printDiv.innerHTML = `<div class="area-img${id}-div"></div><h2 id="${id}">AREA ${id}</h2>`;
 
     //   console.log("attractions resolve data", data);
+
+      printDiv.innerHTML = `<h2>AREA${id}</h2>`;
+      // console.log("attractions resolve data", data);
+
       Object.keys(data).forEach((item) =>{
                 var index = (data[item]);
                 console.log(index);
@@ -60,4 +76,4 @@ function attractionDataPrint(id){
 
 
 
-  module.exports = {areaData, attractionData, printDiv};
+  module.exports = {areaData, attractionData, printDiv, areasPrint};
