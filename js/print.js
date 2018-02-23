@@ -68,9 +68,14 @@ function attractionDataPrint(id){
   attractionData(id)
   .then(
   (attractions) => {
-      printDiv.innerHTML = `<h2>AREA${id}</h2>`;
+
+    
+      // printDiv.innerHTML = `<h2 id="${id}">AREA ${id}</h2>`;
+      printDiv.innerHTML = `<div class="area-img${id}-div"><h2 id="${id}">AREA ${id}</h2><button id="backToAreas">&#x25C0; back</button></div>`;
+      // console.log("attractions resolve data", data);
       printDiv.innerHTML += `<button id="backToAreas">&#x25C0; back</button>`;
       console.log("attractions resolve data", attractions);
+
       Object.keys(attractions).forEach((item) =>{
                 var index = (attractions[item]);
                 // console.log(index);
@@ -142,6 +147,7 @@ function attractionDetailsPrint(id){
         },
         function(areas) {
           console.log("attractionsDetails call fucked up");
+
         }
       );
     }
