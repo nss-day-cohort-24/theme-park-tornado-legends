@@ -13,6 +13,7 @@ $a2: rgba(255, 106, 0, 0.5);
 $a3: rgba(255, 196, 0, 0.5);
 $a4: rgba(255, 225, 0, 0.5);
 $a5: rgba(38, 255, 0, 0.5);
+$blue: #0058FF;
 $a6: rgba(0, 89, 255, 0.5);
 $a7: rgba(128, 0, 255, 0.5);
 $a8: rgba(255, 56, 195, 0.5);
@@ -39,6 +40,8 @@ h1 {
     font-family: $heading-font;
     font-size: 40px;
     color: $heading-color;
+    text-align: center;
+    margin: .25em;
 }
 
 h2 {
@@ -77,6 +80,7 @@ li {
     font-family: $sans-serif;
     font-size: .8em;
     padding: .5em 0.4em;
+    list-style-type: none;
 }
 
 
@@ -248,7 +252,7 @@ footer {
     // display
         background-color: $heading-color;
         padding: 14px 0 14px 0;
-        margin: 2em 0 0 0; 
+        margin: 0; 
     // flexbox
         display: flex;
         display: -webkit-flex;
@@ -280,9 +284,9 @@ footer a .active {
   border-radius: 7px;
   font-family: $heading-font;
   color: #000;
-  font-size: 20px;
+  font-size: 10px;
   background: #ffffff;
-  padding: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
   border: solid #000 3px;
   text-decoration: none;
 }
@@ -363,8 +367,15 @@ footer a .active {
     background-color: #ffe200;
 }
 
+
+
 ////////// END CLASSES
 ////////// END CLASSES
+
+////// PRINT ID
+#print {
+    margin-bottom: 60px;
+}
 
 //// WELCOME PAGE IDs ////
 
@@ -409,11 +420,33 @@ footer a .active {
 }
 //// END WELCOME PAGE IDs ////
 
+////////// SEARCH
+.headerbkgsearch {
+    background: #27FF00;
+}
+
+#searchField {
+    padding: 15px 0 15px 0;
+    margin: 30px 30px 10px 30px;
+    width: 80%;
+    background-color: white;
+    border: $heading-border;
+}
+
+#search-btn {
+    position: relative;
+    left: 254px;
+    margin-bottom: 10px;
+}
 //// MAP ///
 .areaMap {
     vertical-align: middle;
     width: 50%;
     height: 22.75vh;
+}
+
+#print {
+    margin-bottom: 60px;
 }
 
 #backToAreas {
@@ -425,5 +458,15 @@ footer a .active {
     padding: 1em;
     background-color: rgba(255, 255, 255, 0.9);
     // float: left;
+}
+
+.backToAttractions {
+    border: solid 3px $blue;
+    border-radius: 12px;
+    font-family: $heading-font;
+    font-size: 20px;
+    margin: 1em;
+    padding: 1em;
+    background-color: rgba(255, 255, 255,.9);
 }
 

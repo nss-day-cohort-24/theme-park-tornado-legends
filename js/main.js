@@ -7,4 +7,4 @@ require("./time");
 require("./welcome");
 require("./print");
 require("./interaction");
-
+require("./search");

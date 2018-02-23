@@ -3,7 +3,7 @@
 // REQUIRES
 let printer = require("./print");
 let timeFunc = require("./time");
-
+let search = require("./search");
 
 // VARIABLES
 let areasPrint = printer.areasPrint;
@@ -47,5 +47,14 @@ function check(){
     if(event.target.parentElement.id === "clock"){
         timeFunc.timeFunction();
         console.log("ran timeFuc");
+    }
+    if(event.target.parentElement.id === "search"){
+        search.printSearchData();
+    }
+    if (event.target.id === 'search-btn'){
+        search.onEnter();
+    }
+    if(event.target.id === 'home'){
+        areasPrint();
     }
 }
