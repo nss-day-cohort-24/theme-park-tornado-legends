@@ -83,15 +83,26 @@ h2[id='1'] {
 }
 
 .area-img1-div{
-height: 10em;
+    height: 10em;
+    background-image: url("/images/area_1.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -110px;
+    // check
 }
+    
 
 h2[id='2'] {
     background-color: $a2;
 }
 
 .area-img2-div{
-    
+    height: 10em;
+    background-image: url("/images/area_2.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -40px;
+    // check
 }
 
 h2[id='3'] {
@@ -99,7 +110,13 @@ h2[id='3'] {
 }
 
 .area-img3-div{
-    
+    height: 10em;
+    background-image: url("/images/area_3.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -80px;
+        // check
+
 }
 
 h2[id='4'] {
@@ -107,7 +124,13 @@ h2[id='4'] {
 }
 
 .area-img4-div{
-    
+    height: 10em;
+    background-image: url("/images/area_4.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -29px -120px;
+        // check
+
 }
 
 h2[id='5'] {
@@ -115,7 +138,13 @@ h2[id='5'] {
 }
 
 .area-img5-div{
-    
+    height: 10em;
+    background-image: url("/images/area_5.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -80px;
+        // check
+
 }
 
 h2[id='6'] {
@@ -123,7 +152,13 @@ h2[id='6'] {
 }
 
 .area-img6-div{
-    
+    height: 10em;
+    background-image: url("/images/area_6.png");
+    background-repeat: no-repeat;
+    background-size: 430px 350px;
+    background-position: -28px -45px;
+        // check
+
 }
 
 h2[id='7'] {
@@ -134,9 +169,12 @@ h2[id='7'] {
     height: 10em;
     background-image: url("/images/area_7.png");
     background-repeat: no-repeat;
-    background-size: 395px 300px;
-    // background-position: top right;
-    background-position: -20px 20px;
+    background-size: 430px 300px;
+    background-position: -28px -25px;
+
+    // check
+
+
 }
 
 h2[id='8'] {
@@ -144,7 +182,11 @@ h2[id='8'] {
 }
 
 .area-img8-div{
-    
+    height: 10em;
+    background-image: url("/images/area_8.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -70px;
 }
 
 footer {
@@ -245,7 +287,7 @@ footer a .active {
 }
 
 
-#print {
+#jackstand {
     margin-bottom: 4em;
 }
 //// END WELCOME PAGE IDs ////
