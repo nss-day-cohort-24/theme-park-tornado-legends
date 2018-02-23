@@ -54,4 +54,7 @@ function check(){
     if (event.target.id === 'search-btn'){
         search.onEnter();
     }
+    if (event.target.id === 'searchField') {
+        search.enterBtn();
+    }
 }

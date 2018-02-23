@@ -64,5 +64,12 @@ function printSearchData() {
     printDiv.innerHTML = `${searchHead}`;
 }
 
+function enterBtn(event) {
+    console.log("working");
+        if (event.keyCode == 13) {
+            onEnter();
+        }
+}
 
-module.exports = {printSearchData, onEnter};
+
+module.exports = {enterBtn, printSearchData, onEnter};
