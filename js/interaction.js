@@ -2,6 +2,7 @@
 
 // REQUIRES
 let printer = require("./print");
+let timeFunc = require("./time");
 
 
 // VARIABLES
@@ -10,6 +11,8 @@ let areaDataPrint = printer.areaDataPrint;
 let attractionDataPrint = printer.attractionDataPrint;
 let attractionDetailsPrint = printer.attractionDetailsPrint;
 let areaSelect = document.getElementById('print').addEventListener('click', check);
+let timeButton = document.getElementById("footer-nav").addEventListener('click',check);
+
 
 
 // PRINT DIV ID CHECK
@@ -30,5 +33,9 @@ function check(){
         console.log(event.target.className);
         console.log(event.target.id);
         attractionDetailsPrint(event.target.id);
+    }
+    if(event.target.parentElement.id === "clock"){
+        timeFunc.timeFunction();
+        console.log("ran timeFuc");
     }
 }

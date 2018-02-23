@@ -12,6 +12,8 @@ let printDiv = document.getElementById("print");
 let userHour = "c";
 let grab = require("./fetch");
 let timeLoc;
+let aId;
+let indIdArray = [];
 let timeHead = `
 <div class="header-bkg">
    <div class="select">
@@ -140,11 +142,14 @@ function checkTime(checkHour){
   console.log(h);
   if (h == checkHour){
     matchArea();
-    console.log("yeaaaaaaaa buddddyyy");
+    console.log("yeaaaaaaaa buddddyyy",aId);
+
 
     namesArray.push(aNames);
 
     indLocArray.push(timeLoc);
+
+    indIdArray.push(aId);
 
 
 
@@ -173,6 +178,9 @@ attractionData()
               aTimes.push(item.times);
               aNames = item.name;
               aLoc = item.area_id;
+              aId = item.id;
+
+
 
               
 
@@ -226,8 +234,9 @@ function printTimeData() {
     for (let q=0;q<namesArray.length;q++){
     let currentName = namesArray[q];
     let currentLoc = indLocArray[q];
+    let currentId = indIdArray[q];
     // let currentLocation = locationArray[q];
-    printDiv.innerHTML += `<h3>${currentName}<br>`;
+    printDiv.innerHTML += `<h3><div className="areaAttraction" id="${currentId}">${currentName}</div><br>`;
     printDiv.innerHTML += `(${currentLoc}</h3>)<br>`;
 
   }
@@ -257,7 +266,7 @@ for(let ar=0;ar<locationArray.length;ar++){
 
 function fillArea(){
 // ATTRACTIONS BY ID PROMISE
-grab.areaData()
+grab.areas()
   // Then gets executed when promise is resolved or rejected
   .then(
     // The first callback function will be invoked when you resolve
@@ -286,7 +295,7 @@ grab.areaData()
 
 
 fillArea();
-document.body.addEventListener('keypress', timeFunction, true);
+// document.body.addEventListener('keypress', timeFunction, true);
 window.addEventListener("change", changeHour);
 
-module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray, timeHead};
+module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray, timeHead,fillArea};
