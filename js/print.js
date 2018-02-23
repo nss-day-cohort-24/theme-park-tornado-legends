@@ -12,7 +12,12 @@ let attractionData = fetchData.attractionData;
 let attractionDetails =fetchData.attractionDetails;
 let areas = fetchData.areas;
 let printDiv = document.getElementById('print');
+
+// let id = 4;
+let counter = 5;
+
 let backToAreas;
+
 
 
 // Areas 
@@ -34,6 +39,29 @@ function areasPrint(){
     );
   }
 
+
+function runPrint(){
+    console.log(event);
+    counter++;
+    counter = counter % 9;
+    areaDataPrint(counter);
+    attractionDataPrint(counter);
+}
+
+function areaDataPrint(id){
+areaData(id)
+  // Then gets executed when promise is resolved or rejected
+  .then(
+    // The first callback function will be invoked when you resolve
+    function(areas) {
+      console.log("areas ", areas);
+    },
+    // The second callback function will be invoked when you reject
+    function(areas) {
+      console.log("areaData call fucked up");
+    }
+  );
+}
 
 // Attractions 
 function attractionDataPrint(id){
