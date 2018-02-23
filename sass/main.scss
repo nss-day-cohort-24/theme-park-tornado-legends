@@ -201,7 +201,7 @@ footer {
     // display
         background-color: $heading-color;
         padding: 14px 0 14px 0;
-        margin: 2em 0 0 0; 
+        margin: 0; 
     // flexbox
         display: flex;
         display: -webkit-flex;
@@ -367,6 +367,10 @@ footer a .active {
     vertical-align: middle;
     width: 50%;
     height: 22.75vh;
+}
+
+#print {
+    margin-bottom: 60px;
 }
 
 #backToAreas {
