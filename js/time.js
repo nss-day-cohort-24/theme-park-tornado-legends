@@ -219,8 +219,8 @@ function printTimeData() {
 // console.log(timeHead);
 
 // THIS IS THE ENTIRE FUNCTION! IT WILL WORK WHEN YOU UNCOMMENT IT!
-timeFunction();
+// timeFunction();
 
-document.body.addEventListener('keypress', timeFunction, true); 
+// document.body.addEventListener('keypress', timeFunction, true); 
 
 module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray, timeHead};
