@@ -296,12 +296,12 @@ footer a .active {
     text-shadow: $text-shadow;
     padding-top: .5em;
     line-height: 1.9;
+    margin-bottom: 0;
 }
 
 #logo {
-    float: left;
-    padding: 1em .5em 0 .5em;
-    width: 100px;
+    padding: 0 .5em 0 .5em;
+    width: 80px;
 }
 
 #copyright {
@@ -309,10 +309,13 @@ footer a .active {
     font-size: 15px;
     color: white;
     text-shadow: $text-shadow;
-    display: block;
-    position: absolute;
-    left: 7.5em;
-    bottom: 68px;
 }
 //// END WELCOME PAGE IDs ////
 
+//// MAP ///
+
+.areaMap {
+    vertical-align: middle;
+    width: 50%;
+    height: 22.75vh;
+}

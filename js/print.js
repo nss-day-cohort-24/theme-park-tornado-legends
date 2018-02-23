@@ -17,7 +17,7 @@ let backToAreas;
 
 // Areas 
 function areasPrint(){
-  printDiv.innerHTML = `<h2>AREAS</h2>`;
+  printDiv.innerHTML = ``;
   areas()
     .then(
       function(areas) {
