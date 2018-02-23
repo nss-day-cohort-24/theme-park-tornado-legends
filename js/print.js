@@ -5,7 +5,7 @@ let areaData = fetchData.areaData;
 let attractionData = fetchData.attractionData;
 let printDiv = document.getElementById('print');
 // let id = 4;
-let counter = 7;
+let counter = 5;
 
 // let area1Print = document.getElementById('area1').addEventListener('click', runPrint);
 
