@@ -1,35 +1,59 @@
 "use strict";
 
-console.log('fetch console test');
 
-
+// REQUIRES
 let firebase = require("../lib/node_modules/firebase");
 require("../lib/node_modules/firebase/auth");
 require("../lib/node_modules/firebase/database");
 
+
+// VARIABLES
 let database;
 let firebaseData;
 
 
-function areaData(id){
-    console.log('get area call');
-  return new Promise((resolve,reject) => {
-    var loader = new XMLHttpRequest();
-    
-    loader.addEventListener('load', function(){
-      var areas = JSON.parse(this.responseText);
-      resolve(areas);
-    });
-    loader.addEventListener('error', function(){
-      reject();
-    });
-    loader.open("GET", `https://tornado-legends-theme-park.firebaseio.com/areas.json?orderBy="id"&equalTo=${id}`);
-    loader.send();
+// AREAS PROMISE 
+function areas(){
+  // console.log('get areas individual call'); 
+return new Promise((resolve,reject) => {
+  var loader = new XMLHttpRequest();
+  
+  loader.addEventListener('load', function(){
+    var areas = JSON.parse(this.responseText);
+    resolve(areas);
   });
+  loader.addEventListener('error', function(){
+    reject();
+  });
+  loader.open("GET", `https://tornado-legends-theme-park.firebaseio.com/areas.json`);
+  loader.send();
+});
 }
 
+
+// ATTRACTIONS BY ID
+function attractionDetails(id){
+  // console.log('get areas individual call'); 
+return new Promise((resolve,reject) => {
+  var loader = new XMLHttpRequest();
+  
+  loader.addEventListener('load', function(){
+    var attractionDetails = JSON.parse(this.responseText);
+    resolve(attractionDetails);
+  });
+  loader.addEventListener('error', function(){
+    reject();
+  });
+  loader.open("GET", `https://tornado-legends-theme-park.firebaseio.com/attractions.json`);
+  loader.send();
+});
+}
+
+
+
+// ATTRACTIONS BY ID PROMISE
 function attractionData(id){
-  console.log('get area call');
+  // console.log('get area call');
 return new Promise((resolve,reject) => {
   var loader = new XMLHttpRequest();
   
@@ -51,4 +75,4 @@ return new Promise((resolve,reject) => {
 
 
 
-module.exports = {areaData, attractionData};
+module.exports = {attractionData, areas, attractionDetails};

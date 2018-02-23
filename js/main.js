@@ -1,15 +1,10 @@
 "use strict";
 
 
-let config = require('./config');
-let db = require("./fetch");
-let wel = require("./welcome");
+require('./config');
+require("./fetch");
+require("./time");
+require("./welcome");
 require("./print");
-// let firebaseCall = db.getFirebaseData();
+require("./interaction");
 
-// console.log(db);
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     wel.welcome();
-//   });
-  
