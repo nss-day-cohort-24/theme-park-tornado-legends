@@ -228,12 +228,13 @@ function printTimeData() {
   let h2 = h+1;
   let hdisp = h;
   let h2disp = h2;
-  let pm = "pm";
+  let pm ="am";
   if (h>12){
       hdisp = hdisp- 12;
   }
   if (h2>12){
       h2disp = h2disp - 12;
+      pm = "pm";
   }
 
   printDiv.innerHTML = `${timeHead}`;
