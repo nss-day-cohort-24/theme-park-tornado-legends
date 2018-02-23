@@ -236,7 +236,7 @@ function printTimeData() {
     let currentLoc = indLocArray[q];
     let currentId = indIdArray[q];
     // let currentLocation = locationArray[q];
-    printDiv.innerHTML += `<h3><div className="areaAttraction" id="${currentId}">${currentName}</div><br>`;
+    printDiv.innerHTML += `<h3 class="timeAttraction" id="${currentId}">${currentName}<br>`;
     printDiv.innerHTML += `(${currentLoc}</h3>)<br>`;
 
   }

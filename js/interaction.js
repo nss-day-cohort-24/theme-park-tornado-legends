@@ -10,6 +10,7 @@ let areasPrint = printer.areasPrint;
 let areaDataPrint = printer.areaDataPrint;
 let attractionDataPrint = printer.attractionDataPrint;
 let attractionDetailsPrint = printer.attractionDetailsPrint;
+let attractionDetailsTimePrint = printer.attractionDetailsTimePrint;
 let areaSelect = document.getElementById('print').addEventListener('click', check);
 let timeButton = document.getElementById("footer-nav").addEventListener('click',check);
 
@@ -29,10 +30,19 @@ function check(){
         console.log(event.target.id);
         attractionDataPrint(parseInt(event.target.id));
     }
+    if(event.target.className === 'backToTime'){
+        console.log(event.target.id);
+        timeFunc.timeFunction();
+    }
     if(event.target.className === 'areaAttraction'){
         console.log(event.target.className);
         console.log(event.target.id);
         attractionDetailsPrint(event.target.id);
+    }
+    if(event.target.className === 'timeAttraction'){
+        console.log(event.target.className);
+        console.log(event.target.id);
+        attractionDetailsTimePrint(event.target.id);
     }
     if(event.target.parentElement.id === "clock"){
         timeFunc.timeFunction();

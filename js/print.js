@@ -89,5 +89,34 @@ function attractionDetailsPrint(id){
     );
   }
 
+  function attractionDetailsTimePrint(id){
+    console.log('attraction details print function');
+    attractionDetails(id)
+      .then(
+        function(attractions) {
+          Object.keys(attractions).forEach((item)=>{
+            var index = (attractions[item]);
+            if(id == index.id){
+              console.log(index.name);
+              console.log(index.description);
+              if(index.hasOwnProperty('times')){
+                printDiv.innerHTML = `<h2>${index.name}</h2>`;
+                printDiv.innerHTML += `<h4 class="backToTime" id=${index.area_id}>Back</h4>`;
+                printDiv.innerHTML += `<h3 class="attractionDetails">${index.description}</h3>`;
+                printDiv.innerHTML += `<ul><li>Times: ${index.times.join(' // ')}</li>`;
+              }else{
+                printDiv.innerHTML = `<h2>${index.name}</h2>`;
+                printDiv.innerHTML += `<h4 class="backToAttractions" id=${index.area_id}>Back</h4>`;
+                printDiv.innerHTML += `<h3 class="attractionDetails">${index.description}</h3>`;
+              }
+            }
+          });
+        },
+        function(areas) {
+          console.log("attractionsDetails call fucked up");
+        }
+      );
+    }
 
-  module.exports = {printDiv, areasPrint, attractionDataPrint, attractionDetailsPrint};
+
+  module.exports = {printDiv, areasPrint, attractionDataPrint, attractionDetailsPrint,attractionDetailsTimePrint};
