@@ -280,6 +280,11 @@ grab.areaData()
 
 // THIS IS THE ENTIRE FUNCTION! IT WILL WORK WHEN YOU UNCOMMENT IT!
 
+// timeFunction();
+
+// document.body.addEventListener('keypress', timeFunction, true); 
+
+
 fillArea();
 document.body.addEventListener('keypress', timeFunction, true);
 window.addEventListener("change", changeHour);
