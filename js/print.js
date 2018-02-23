@@ -41,7 +41,7 @@ function attractionDataPrint(id){
   .then(
   (attractions) => {
       printDiv.innerHTML = `<h2>AREA${id}</h2>`;
-      printDiv.innerHTML += `<h4 id="backToAreas">Back</h4>`;
+      printDiv.innerHTML += `<button id="backToAreas">&#x25C0; back</button>`;
       // console.log("attractions resolve data", data);
       Object.keys(attractions).forEach((item) =>{
                 var index = (attractions[item]);
