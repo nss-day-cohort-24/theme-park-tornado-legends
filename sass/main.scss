@@ -6,14 +6,14 @@
 // color vars
 $heading-color: #000;
 $body-color:  #3E3E3E;
-$a1: rgba(255, 0, 0, 0.5);
-$a2: rgba(255, 106, 0, 0.5);
-$a3: rgba(255, 196, 0, 0.5);
-$a4: rgba(255, 225, 0, 0.5);
-$a5: rgba(38, 255, 0, 0.5);
-$a6: rgba(0, 89, 255, 0.5);
-$a7: rgba(128, 0, 255, 0.5);
-$a8: rgba(255, 56, 195, 0.5);
+$a1: rgba(255, 0, 0, 0.74);
+$a2: rgba(255, 106, 0, 0.712);
+$a3: rgba(255, 196, 0, 0.76);
+$a4: rgba(255, 225, 0, 0.678);
+$a5: rgba(38, 255, 0, 0.671);
+$a6: rgba(0, 89, 255, 0.705);
+$a7: rgba(128, 0, 255, 0.74);
+$a8: rgba(255, 56, 195, 0.678);
 
 
 
@@ -71,6 +71,8 @@ li {
     padding: 0 .4em;
 }
 
+
+
 img.area-img {
     // width: 100%;
     // position: absolute;
@@ -83,15 +85,26 @@ h2[id='1'] {
 }
 
 .area-img1-div{
-height: 10em;
+    height: 10em;
+    background-image: url("/images/area_1.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -110px;
+    // check
 }
+    
 
 h2[id='2'] {
     background-color: $a2;
 }
 
 .area-img2-div{
-    
+    height: 10em;
+    background-image: url("/images/area_2.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -40px;
+    // check
 }
 
 h2[id='3'] {
@@ -99,7 +112,13 @@ h2[id='3'] {
 }
 
 .area-img3-div{
-    
+    height: 10em;
+    background-image: url("/images/area_3.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -80px;
+        // check
+
 }
 
 h2[id='4'] {
@@ -107,7 +126,13 @@ h2[id='4'] {
 }
 
 .area-img4-div{
-    
+    height: 10em;
+    background-image: url("/images/area_4.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -29px -120px;
+        // check
+
 }
 
 h2[id='5'] {
@@ -115,7 +140,13 @@ h2[id='5'] {
 }
 
 .area-img5-div{
-    
+    height: 10em;
+    background-image: url("/images/area_5.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -80px;
+        // check
+
 }
 
 h2[id='6'] {
@@ -123,7 +154,13 @@ h2[id='6'] {
 }
 
 .area-img6-div{
-    
+    height: 10em;
+    background-image: url("/images/area_6.png");
+    background-repeat: no-repeat;
+    background-size: 430px 350px;
+    background-position: -28px -45px;
+        // check
+
 }
 
 h2[id='7'] {
@@ -134,9 +171,12 @@ h2[id='7'] {
     height: 10em;
     background-image: url("/images/area_7.png");
     background-repeat: no-repeat;
-    background-size: 395px 300px;
-    // background-position: top right;
-    background-position: -20px 20px;
+    background-size: 430px 300px;
+    background-position: -28px -25px;
+
+    // check
+
+
 }
 
 h2[id='8'] {
@@ -144,7 +184,11 @@ h2[id='8'] {
 }
 
 .area-img8-div{
-    
+    height: 10em;
+    background-image: url("/images/area_8.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -70px;
 }
 
 footer {
@@ -313,7 +357,6 @@ footer a .active {
 //// END WELCOME PAGE IDs ////
 
 //// MAP ///
-
 .areaMap {
     vertical-align: middle;
     width: 50%;
