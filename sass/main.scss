@@ -75,6 +75,7 @@ li {
     font-family: $sans-serif;
     font-size: .8em;
     padding: 0 .4em;
+    list-style-type: none;
 }
 
 
@@ -321,6 +322,11 @@ footer a .active {
 ////////// END CLASSES
 ////////// END CLASSES
 
+////// PRINT ID
+#print {
+    margin-bottom: 60px;
+}
+
 //// WELCOME PAGE IDs ////
 
 #welcomeDiv {
@@ -366,7 +372,7 @@ footer a .active {
 
 ////////// SEARCH
 .headerbkgsearch {
-    background-color: #27FF00;
+    background: #27FF00;
 }
 
 #searchField {
@@ -380,6 +386,7 @@ footer a .active {
 #search-btn {
     position: relative;
     left: 254px;
+    margin-bottom: 10px;
 }
 //// MAP ///
 .areaMap {

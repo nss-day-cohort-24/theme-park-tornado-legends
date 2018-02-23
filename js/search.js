@@ -12,11 +12,11 @@ let currentName;
 let inventory = [];
 
 const searchHead = `
-<div class=".headerbkgsearch">
-<input id="searchField" type="text" prototype="enter here"></input>
-<br>
-<button class="btn" id="search-btn">search</button>
-</div>`;
+    <div class="headerbkgsearch">
+    <input id="searchField" type="text" prototype="enter here"></input>
+    <br>
+    <button class="btn" id="search-btn">search</button>
+    </div>`;
 
 function loadSearch() {
     console.log('search call');
@@ -37,6 +37,7 @@ function loadSearch() {
 
 function onEnter(){
     searchTerm = document.getElementById("searchField").value;
+    printDiv.innerHTML = `${searchHead}`;
     
     loadSearch().then( 
         (json) => {
@@ -49,31 +50,19 @@ function onEnter(){
                 currentSearchArea = json.attractions[i].area_id;
                 if (currentSearch.includes(searchTerm)){
                     console.log("match", currentSearch);
-                    printDiv.innerHTML += `<li id="${currentSearchId}" class="areaAttraction"><h3>${currentSearch}</h3><br><p>${currentSearchArea}</p></li>`;
+                    printDiv.innerHTML += `<li><h3 id="${currentSearchId}" class="areaAttraction">${currentSearch}</h3><br><p>Area ${currentSearchArea}</p></li>`;
                 }
             }
         },
         (reject) => {
             console.log("SOMETHING WENT REALLY WRONG");
         }
-
     );
 }
 
-// function populate() {
-//     for (let q = 0; q < searchDisplay.length; q++) {
-//         currentName = searchDisplay[q];
-//         // let currentLocation = locationArray[q];
-//     } 
-//     printDiv.innerHTML += `${currentName}<br>`;  
-// }
-
 function printSearchData() {
     printDiv.innerHTML = `${searchHead}`;
-
 }
 
-
-// searchButton.addEventListener("click", grabData());
 
 module.exports = {printSearchData, onEnter};
