@@ -6,14 +6,18 @@
 // color vars
 $heading-color: #000;
 $body-color:  #3E3E3E;
+$red: #FF0000;
 $a1: rgba(255, 0, 0, 0.5);
+$orange: #FF6C00;
 $a2: rgba(255, 106, 0, 0.5);
 $a3: rgba(255, 196, 0, 0.5);
 $a4: rgba(255, 225, 0, 0.5);
 $a5: rgba(38, 255, 0, 0.5);
+$blue: #0058FF;
 $a6: rgba(0, 89, 255, 0.5);
 $a7: rgba(128, 0, 255, 0.5);
 $a8: rgba(255, 56, 195, 0.5);
+
 
 
 
@@ -36,6 +40,8 @@ h1 {
     font-family: $heading-font;
     font-size: 40px;
     color: $heading-color;
+    text-align: center;
+    margin: .25em;
 }
 
 h2 {
@@ -71,6 +77,8 @@ li {
     padding: 0 .4em;
 }
 
+
+
 img.area-img {
     // width: 100%;
     // position: absolute;
@@ -83,15 +91,26 @@ h2[id='1'] {
 }
 
 .area-img1-div{
-height: 10em;
+    height: 10em;
+    background-image: url("/images/area_1.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -110px;
+    // check
 }
+    
 
 h2[id='2'] {
     background-color: $a2;
 }
 
 .area-img2-div{
-    
+    height: 10em;
+    background-image: url("/images/area_2.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -40px;
+    // check
 }
 
 h2[id='3'] {
@@ -99,7 +118,13 @@ h2[id='3'] {
 }
 
 .area-img3-div{
-    
+    height: 10em;
+    background-image: url("/images/area_3.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -80px;
+        // check
+
 }
 
 h2[id='4'] {
@@ -107,7 +132,13 @@ h2[id='4'] {
 }
 
 .area-img4-div{
-    
+    height: 10em;
+    background-image: url("/images/area_4.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -29px -120px;
+        // check
+
 }
 
 h2[id='5'] {
@@ -115,7 +146,13 @@ h2[id='5'] {
 }
 
 .area-img5-div{
-    
+    height: 10em;
+    background-image: url("/images/area_5.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -80px;
+        // check
+
 }
 
 h2[id='6'] {
@@ -123,7 +160,13 @@ h2[id='6'] {
 }
 
 .area-img6-div{
-    
+    height: 10em;
+    background-image: url("/images/area_6.png");
+    background-repeat: no-repeat;
+    background-size: 430px 350px;
+    background-position: -28px -45px;
+        // check
+
 }
 
 h2[id='7'] {
@@ -134,9 +177,12 @@ h2[id='7'] {
     height: 10em;
     background-image: url("/images/area_7.png");
     background-repeat: no-repeat;
-    background-size: 395px 300px;
-    // background-position: top right;
-    background-position: -20px 20px;
+    background-size: 430px 300px;
+    background-position: -28px -25px;
+
+    // check
+
+
 }
 
 h2[id='8'] {
@@ -144,7 +190,11 @@ h2[id='8'] {
 }
 
 .area-img8-div{
-    
+    height: 10em;
+    background-image: url("/images/area_8.png");
+    background-repeat: no-repeat;
+    background-size: 430px 300px;
+    background-position: -28px -70px;
 }
 
 footer {
@@ -298,12 +348,12 @@ footer a .active {
     text-shadow: $text-shadow;
     padding-top: .5em;
     line-height: 1.9;
+    margin-bottom: 0;
 }
 
 #logo {
-    float: left;
-    padding: 1em .5em 0 .5em;
-    width: 100px;
+    padding: 0 .5em 0 .5em;
+    width: 80px;
 }
 
 #copyright {
@@ -311,10 +361,6 @@ footer a .active {
     font-size: 15px;
     color: white;
     text-shadow: $text-shadow;
-    display: block;
-    position: absolute;
-    left: 7.5em;
-    bottom: 68px;
 }
 //// END WELCOME PAGE IDs ////
 
@@ -334,4 +380,31 @@ footer a .active {
 #search-btn {
     position: relative;
     left: 254px;
+}
+//// MAP ///
+.areaMap {
+    vertical-align: middle;
+    width: 50%;
+    height: 22.75vh;
+}
+
+#backToAreas {
+    border: solid 3px $orange;
+    border-radius: 12px;
+    font-family: $heading-font;
+    font-size: 20px;
+    margin: 1em;
+    padding: 1em;
+    background-color: rgba(255, 255, 255,.9);
+    // float: left;
+} 
+
+.backToAttractions {
+    border: solid 3px $blue;
+    border-radius: 12px;
+    font-family: $heading-font;
+    font-size: 20px;
+    margin: 1em;
+    padding: 1em;
+    background-color: rgba(255, 255, 255,.9);
 }

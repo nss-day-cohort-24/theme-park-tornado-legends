@@ -7,11 +7,17 @@ let aNames;
 let aLoc;
 let namesArray = [];
 let locationArray = [];
+let indLocArray = [];
 let printDiv = document.getElementById("print");
+let userHour = "c";
+let grab = require("./fetch");
+let timeLoc;
+let aId;
+let indIdArray = [];
 let timeHead = `
 <div class="header-bkg">
    <div class="select">
-       <select>
+       <select id="user-hour">
            <option>
                <p>Current Time</p>
            </option>
@@ -40,7 +46,7 @@ let timeHead = `
                    <p>1:00 pm - 2:00 pm</p>
                </a>
            </option>
-           <option value="14>
+           <option value="14">
                <a href="#">
                    <p>2:00 pm - 3:00 pm</p>
                </a>
@@ -101,10 +107,11 @@ function currentTime(){
     let c = d.toLocaleTimeString();
     console.log(c);
     h = d.getHours();
-    // console.log("hours",h);
-    // return h;
+
 }
 currentTime();
+
+
 
 
 function attractionData(){
@@ -124,29 +131,39 @@ function attractionData(){
   });
 }
 
-function checkTime(){
+
+function checkTime(checkHour){
   // h = currentTime;
+
+ 
+  if(userHour !== "c"){
+    h = userHour;
+  }
   console.log(h);
-  console.log("indHr checkTime", indHr);
-  if (h == indHr){
+  if (h == checkHour){
+    matchArea();
+    console.log("yeaaaaaaaa buddddyyy",aId);
 
-    console.log("yeaaaaaaaa buddddyyy");
-
-    console.log("a",aNames);
 
     namesArray.push(aNames);
 
-    locationArray.push(aLoc);
+    indLocArray.push(timeLoc);
 
-    console.log(namesArray);
+    indIdArray.push(aId);
 
-    printTimeData();
+
+
+
+
+
 
 
 
   }
+  printTimeData();
   }
 function timeFunction(){
+
 namesArray = [];
 attractionData()
   // Then gets executed when promise is resolved or rejected
@@ -160,15 +177,20 @@ attractionData()
               let aTimes = [];
               aTimes.push(item.times);
               aNames = item.name;
-              aLoc = item.location;
+              aLoc = item.area_id;
+              aId = item.id;
+
+
+
+              
+
 
                       for(let i=0;i < aTimes.length;i++){
                       let a = aTimes[i];
 
-                // console.log(aTimes);
-                            // console.log("getFuckked",aTimes[i]);
+
                             for(let z=0;z<a.length;z++){
-                                        // console.log("individual time",a[z]);
+
                                         let a = aTimes[i];
                                         let indTime = a[z];
                                         indHr = indTime.substring(0, 2);
@@ -183,7 +205,7 @@ attractionData()
                                           indHr = indHr.toString();
                                       
                                         }
-                                    checkTime();
+                                    checkTime(indHr);
                                     
                             }
 
@@ -201,26 +223,79 @@ attractionData()
 
 
 function printTimeData() {
+  h = parseInt(h);
+  let pm = "am";
+  if(h>12){
+    h=h-12;
+    pm="pm";
+  }
   printDiv.innerHTML = `${timeHead}`;
-  printDiv.innerHTML += `<h1>Current time</h1>`;
+  printDiv.innerHTML += `<h1>${h}-${h+1+pm}</h1>`;
     for (let q=0;q<namesArray.length;q++){
     let currentName = namesArray[q];
-    let currentLocation = locationArray[q];
-    printDiv.innerHTML += `${currentName}<br>`;
-
-
+    let currentLoc = indLocArray[q];
+    let currentId = indIdArray[q];
+    // let currentLocation = locationArray[q];
+    printDiv.innerHTML += `<h3 class="timeAttraction" id="${currentId}">${currentName}<br>`;
+    printDiv.innerHTML += `(${currentLoc}</h3>)<br>`;
 
   }
 }
 
 
 
+function changeHour(){
+userHour = document.getElementById("user-hour").value;
+
+timeFunction();
+userHour = document.getElementById("user-hour").value;
+
+}
+
+function matchArea(){
+for(let ar=0;ar<locationArray.length;ar++){
+  let currentArea = locationArray[ar].id;
+  if(aLoc == currentArea){
+    timeLoc = locationArray[ar].name;
+
+  }
+}
+   
+}
+
+
+function fillArea(){
+// ATTRACTIONS BY ID PROMISE
+grab.areas()
+  // Then gets executed when promise is resolved or rejected
+  .then(
+    // The first callback function will be invoked when you resolve
+    function(json_data) {
+      json_data.forEach((item)=>{
+        locationArray.push(item);
+      });
+      // console.log("array",locationArray);
+      //  console.log("API call successful and responded with", json_data);
+    },
+    // The second callback function will be invoked when you reject
+    function(json_data) {
+      console.log("API call not successful");
+    }
+  );
+}
+
 
 // console.log(timeHead);
 
 // THIS IS THE ENTIRE FUNCTION! IT WILL WORK WHEN YOU UNCOMMENT IT!
-timeFunction();
 
-document.body.addEventListener('keypress', timeFunction, true); 
+// timeFunction();
 
-module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray, timeHead};
+// document.body.addEventListener('keypress', timeFunction, true); 
+
+
+fillArea();
+// document.body.addEventListener('keypress', timeFunction, true);
+window.addEventListener("change", changeHour);
+
+module.exports = {currentTime, attractionData, checkTime, timeFunction, namesArray, timeHead,fillArea};
