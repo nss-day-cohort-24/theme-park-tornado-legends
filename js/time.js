@@ -257,7 +257,7 @@ function changeHour(){
 userHour = document.getElementById("user-hour").value;
 
 timeFunction();
-userHour = document.getElementById("user-hour").value;
+
 
 }
 
