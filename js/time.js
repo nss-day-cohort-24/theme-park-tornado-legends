@@ -224,13 +224,29 @@ attractionData()
 
 function printTimeData() {
   h = parseInt(h);
+
   let pm = "am";
-  if(h>12){
-    h=h-12;
-    pm="pm";
+  let h2 = h+1;
+  if (h2 == 12){
+      pm = "pm";
   }
+  if(h2 == 24){
+      pm = "am";
+  }
+  if(h > 12){
+    h=h-12;
+    pm = "pm";
+  }
+  if(h2 > 12){
+      h2 = h2-12;
+  }
+  if(h2==1){
+    pm = "pm";
+  }
+
   printDiv.innerHTML = `${timeHead}`;
-  printDiv.innerHTML += `<h1>${h}-${h+1+pm}</h1>`;
+  printDiv.innerHTML += `<h1>${h}-${h2+pm}</h1>`;
+  printDiv.innerHTML += `<h4 id="backToAreas">Back</h4>`;
     for (let q=0;q<namesArray.length;q++){
     let currentName = namesArray[q];
     let currentLoc = indLocArray[q];
