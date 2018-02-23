@@ -63,4 +63,7 @@ function check(){
     if (event.target.id === 'searchField') {
         document.getElementById('searchField').addEventListener("keypress", enterKey);
     }
+        if(event.target.id === 'home'){
+        areasPrint();
+    }
 }
