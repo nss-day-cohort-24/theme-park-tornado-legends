@@ -70,7 +70,7 @@ function attractionDataPrint(id){
   (attractions) => {
       printDiv.innerHTML = `<h2>AREA${id}</h2>`;
       printDiv.innerHTML += `<button id="backToAreas">&#x25C0; back</button>`;
-      // console.log("attractions resolve data", data);
+      console.log("attractions resolve data", attractions);
       Object.keys(attractions).forEach((item) =>{
                 var index = (attractions[item]);
                 // console.log(index);
