@@ -100,12 +100,12 @@ function attractionDetailsPrint(id){
             console.log(index.description);
             if(index.hasOwnProperty('times')){
               printDiv.innerHTML = `<h2>${index.name}</h2>`;
-              printDiv.innerHTML += `<h4 class="backToAttractions" id=${index.area_id}>Back</h4>`;
+              printDiv.innerHTML += `<button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button>`;
               printDiv.innerHTML += `<h3 class="attractionDetails">${index.description}</h3>`;
               printDiv.innerHTML += `<ul><li>Times: ${index.times.join(' // ')}</li>`;
             }else{
               printDiv.innerHTML = `<h2>${index.name}</h2>`;
-              printDiv.innerHTML += `<h4 class="backToAttractions" id=${index.area_id}>Back</h4>`;
+              printDiv.innerHTML += `<button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button>`;
               printDiv.innerHTML += `<h3 class="attractionDetails">${index.description}</h3>`;
             }
           }
