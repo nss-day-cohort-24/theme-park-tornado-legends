@@ -7,6 +7,7 @@ let searchTerm;
 let searchFooter = document.getElementById("footer-nav");
 let printDiv = document.getElementById("print");
 let searchButton = document.getElementById("search-btn");
+let currentName;
 
 let inventory = [];
 
@@ -16,11 +17,6 @@ const searchHead = `
 <br>
 <button class="btn" id="search-btn">search</button>
 </div>`;
-
-function grabData(){
-    searchTerm = document.getElementById("searchField").value;
-
-}
 
 function loadSearch() {
     console.log('search call');
@@ -40,16 +36,20 @@ function loadSearch() {
 }
 
 function onEnter(){
+    searchTerm = document.getElementById("searchField").value;
+    
     loadSearch().then( 
         (json) => {
-        
+            let currentSearch;
+            let currentSearchId;
+            let currentSearchArea;
             for (var i = 0; i < json.attractions.length; i++){
-                console.log("search term", searchTerm);
-                grabData();
-                let currentSearch = json.attractions[i].name ;   
+                currentSearch = json.attractions[i].name;
+                currentSearchId = json.attractions[i].id;  
+                currentSearchArea = json.attractions[i].area_id;
                 if (currentSearch.includes(searchTerm)){
-                    searchDisplay.push(currentSearch);
-                    // console.log("search display", searchDisplay);
+                    console.log("match", currentSearch);
+                    printDiv.innerHTML += `<li id="${currentSearchId}" class="areaAttraction"><h3>${currentSearch}</h3><br><p>${currentSearchArea}</p></li>`;
                 }
             }
         },
@@ -59,20 +59,21 @@ function onEnter(){
 
     );
 }
-function populate() {
-    for (let q = 0; q < searchDisplay.length; q++) {
-        let currentName = searchDisplay[q];
-        // let currentLocation = locationArray[q];
-        printDiv.innerHTML += `${currentName}<br>`;  
-    } 
-}
+
+// function populate() {
+//     for (let q = 0; q < searchDisplay.length; q++) {
+//         currentName = searchDisplay[q];
+//         // let currentLocation = locationArray[q];
+//     } 
+//     printDiv.innerHTML += `${currentName}<br>`;  
+// }
 
 function printSearchData() {
     printDiv.innerHTML = `${searchHead}`;
 
 }
 
-printSearchData();
-
 
 // searchButton.addEventListener("click", grabData());
+
+module.exports = {printSearchData, onEnter};
