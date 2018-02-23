@@ -163,7 +163,7 @@ function checkTime(checkHour){
   printTimeData();
   }
 function timeFunction(){
-
+currentTime();
 namesArray = [];
 attractionData()
   // Then gets executed when promise is resolved or rejected
@@ -224,13 +224,22 @@ attractionData()
 
 function printTimeData() {
   h = parseInt(h);
-  let pm = "am";
-  if(h>12){
-    h=h-12;
-    pm="pm";
+
+  let h2 = h+1;
+  let hdisp = h;
+  let h2disp = h2;
+  let pm ="am";
+  if (h>12){
+      hdisp = hdisp- 12;
   }
+  if (h2>12){
+      h2disp = h2disp - 12;
+      pm = "pm";
+  }
+
   printDiv.innerHTML = `${timeHead}`;
-  printDiv.innerHTML += `<h1>${h}-${h+1+pm}</h1>`;
+  printDiv.innerHTML += `<h1>${hdisp}-${h2disp+pm}</h1>`;
+  printDiv.innerHTML += `<h4 id="backToAreas">Back</h4>`;
     for (let q=0;q<namesArray.length;q++){
     let currentName = namesArray[q];
     let currentLoc = indLocArray[q];
@@ -248,7 +257,7 @@ function changeHour(){
 userHour = document.getElementById("user-hour").value;
 
 timeFunction();
-userHour = document.getElementById("user-hour").value;
+
 
 }
 
