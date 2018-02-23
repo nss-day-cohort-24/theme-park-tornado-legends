@@ -183,9 +183,9 @@ footer a .active {
   border-radius: 7px;
   font-family: $heading-font;
   color: #000;
-  font-size: 20px;
+  font-size: 10px;
   background: #ffffff;
-  padding: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
   border: solid #000 3px;
   text-decoration: none;
 }
@@ -266,6 +266,8 @@ footer a .active {
     background-color: #ffe200;
 }
 
+
+
 ////////// END CLASSES
 ////////// END CLASSES
 
@@ -316,3 +318,20 @@ footer a .active {
 }
 //// END WELCOME PAGE IDs ////
 
+////////// SEARCH
+.headerbkgsearch {
+    background-color: #27FF00;
+}
+
+#searchField {
+    padding: 15px 0 15px 0;
+    margin: 30px 30px 10px 30px;
+    width: 80%;
+    background-color: white;
+    border: $heading-border;
+}
+
+#search-btn {
+    position: relative;
+    left: 254px;
+}
