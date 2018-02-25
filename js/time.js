@@ -14,13 +14,19 @@ let grab = require("./fetch");
 let timeLoc;
 let aId;
 let indIdArray = [];
+
+
+
 let timeHead = `
 <div class="header-bkg">
    <div class="select">
        <select id="user-hour">
            <option>
-               <p>Current Time</p>
+               <p>Choose A Time</p>
            </option>
+           <option value = "c">
+           <p>Current Time</p>
+            </option>
            <option value="9">
                <a href="#">
                    <p>9:00 am - 10:00 am</p>
@@ -107,6 +113,7 @@ function currentTime(){
     let c = d.toLocaleTimeString();
     console.log(c);
     h = d.getHours();
+    return h;
 
 }
 currentTime();
@@ -239,7 +246,6 @@ function printTimeData() {
 
   printDiv.innerHTML = `${timeHead}`;
   printDiv.innerHTML += `<h1>${hdisp}-${h2disp+pm}</h1>`;
-  printDiv.innerHTML += `<h4 id="backToAreas">Back</h4>`;
     for (let q=0;q<namesArray.length;q++){
     let currentName = namesArray[q];
     let currentLoc = indLocArray[q];
@@ -255,6 +261,10 @@ function printTimeData() {
 
 function changeHour(){
 userHour = document.getElementById("user-hour").value;
+if (document.getElementById("user-hour").value == "c"){
+    userHour = currentTime();
+    console.log("currentTime", userHour);
+}
 
 timeFunction();
 
