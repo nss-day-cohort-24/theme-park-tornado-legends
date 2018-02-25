@@ -16,7 +16,6 @@ let aId;
 let indIdArray = [];
 
 
-
 let timeHead = `
 <div class="header-bkg">
    <div class="select">
@@ -107,7 +106,7 @@ let timeHead = `
        </div>
    </div>
 </div>`;
-
+// Finds The Current Time
 function currentTime(){
     let d = new Date();
     let c = d.toLocaleTimeString();
@@ -119,7 +118,7 @@ function currentTime(){
 currentTime();
 
 
-
+// Retrieves the Firebase Data
 
 function attractionData(){
     console.log('get area call');
@@ -138,6 +137,7 @@ function attractionData(){
   });
 }
 
+// Compares the selected Time with each attraction times, then pushes matching times to a separate array.
 
 function checkTime(checkHour){
   // h = currentTime;
@@ -169,6 +169,8 @@ function checkTime(checkHour){
   }
   printTimeData();
   }
+
+//   The entire Function. Creates an array of arrays, then goes through each times and runs the checkTime function on each.
 function timeFunction(){
 currentTime();
 namesArray = [];
@@ -228,6 +230,7 @@ attractionData()
   );
 }
 
+// Formats time header and then prints each attraction, and location according to selected time
 
 function printTimeData() {
   h = parseInt(h);
@@ -258,6 +261,7 @@ function printTimeData() {
 }
 
 
+// Determines selected hour and then runs the main timeFunction
 
 function changeHour(){
 userHour = document.getElementById("user-hour").value;
@@ -271,6 +275,8 @@ timeFunction();
 
 }
 
+// Finds the appropriate name for each location associated with an attraction
+
 function matchArea(){
 for(let ar=0;ar<locationArray.length;ar++){
   let currentArea = locationArray[ar].id;
@@ -282,6 +288,7 @@ for(let ar=0;ar<locationArray.length;ar++){
    
 }
 
+// creates an array of area objects for use with finding correct area_id
 
 function fillArea(){
 // ATTRACTIONS BY ID PROMISE
