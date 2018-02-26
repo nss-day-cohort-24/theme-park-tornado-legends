@@ -447,6 +447,10 @@ footer a .active {
     width: 80%;
     background-color: white;
     border: $heading-border;
+    font-size: 20px;
+    font-family: $heading-font;
+    color: rgb(36, 36, 36);
+    text-align: center;
 }
 
 #search-btn {
