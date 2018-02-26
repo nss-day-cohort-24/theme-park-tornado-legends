@@ -13,7 +13,7 @@ let inventory = [];
 
 const searchHead = `
     <div class="headerbkgsearch">
-    <input id="searchField" type="text" prototype="enter here"></input>
+    <input id="searchField" type="text"></input>
     <br>
     <button class="btn" id="search-btn">search</button>
     </div>`;
@@ -64,5 +64,13 @@ function printSearchData() {
     printDiv.innerHTML = `${searchHead}`;
 }
 
+function enterBtn(event) {
+    console.log("working");
+        if (event.keyCode === 13) {
+            console.log("INSIDE THE THING");
+            onEnter();
+        }
+}
 
-module.exports = {printSearchData, onEnter};
+
+module.exports = {enterBtn, printSearchData, onEnter};

@@ -14,13 +14,18 @@ let grab = require("./fetch");
 let timeLoc;
 let aId;
 let indIdArray = [];
+
+
 let timeHead = `
 <div class="header-bkg">
    <div class="select">
        <select id="user-hour">
            <option>
-               <p>Current Time</p>
+               <p>Choose A Time</p>
            </option>
+           <option value = "c">
+           <p>Current Time</p>
+            </option>
            <option value="9">
                <a href="#">
                    <p>9:00 am - 10:00 am</p>
@@ -101,18 +106,19 @@ let timeHead = `
        </div>
    </div>
 </div>`;
-
+// Finds The Current Time
 function currentTime(){
     let d = new Date();
     let c = d.toLocaleTimeString();
     console.log(c);
     h = d.getHours();
+    return h;
 
 }
 currentTime();
 
 
-
+// Retrieves the Firebase Data
 
 function attractionData(){
     console.log('get area call');
@@ -130,6 +136,8 @@ function attractionData(){
     loader.send();
   });
 }
+
+// Compares the selected Time with each attraction times, then pushes matching times to a separate array.
 
 
 function checkTime(checkHour){
@@ -162,8 +170,10 @@ function checkTime(checkHour){
   }
   printTimeData();
   }
-function timeFunction(){
 
+//   The entire Function. Creates an array of arrays, then goes through each times and runs the checkTime function on each.
+function timeFunction(){
+currentTime();
 namesArray = [];
 attractionData()
   // Then gets executed when promise is resolved or rejected
@@ -221,16 +231,25 @@ attractionData()
   );
 }
 
+// Formats time header and then prints each attraction, and location according to selected time
 
 function printTimeData() {
   h = parseInt(h);
-  let pm = "am";
-  if(h>12){
-    h=h-12;
-    pm="pm";
+
+  let h2 = h+1;
+  let hdisp = h;
+  let h2disp = h2;
+  let pm ="am";
+  if (h>12){
+      hdisp = hdisp- 12;
   }
+  if (h2>12){
+      h2disp = h2disp - 12;
+      pm = "pm";
+  }
+
   printDiv.innerHTML = `${timeHead}`;
-  printDiv.innerHTML += `<h1>${h}-${h+1+pm}</h1>`;
+  printDiv.innerHTML += `<h1>${hdisp}-${h2disp+pm}</h1>`;
     for (let q=0;q<namesArray.length;q++){
     let currentName = namesArray[q];
     let currentLoc = indLocArray[q];
@@ -243,14 +262,21 @@ function printTimeData() {
 }
 
 
+// Determines selected hour and then runs the main timeFunction
 
 function changeHour(){
 userHour = document.getElementById("user-hour").value;
+if (document.getElementById("user-hour").value == "c"){
+    userHour = currentTime();
+    console.log("currentTime", userHour);
+}
 
 timeFunction();
-userHour = document.getElementById("user-hour").value;
+
 
 }
+
+// Finds the appropriate name for each location associated with an attraction
 
 function matchArea(){
 for(let ar=0;ar<locationArray.length;ar++){
@@ -263,6 +289,7 @@ for(let ar=0;ar<locationArray.length;ar++){
    
 }
 
+// creates an array of area objects for use with finding correct area_id
 
 function fillArea(){
 // ATTRACTIONS BY ID PROMISE

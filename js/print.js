@@ -52,20 +52,27 @@ function attractionDataPrint(id){
   attractionData(id)
   .then(
   (attractions) => {
+
     for( var i = 0; i < areasList.length; i++){
       var index = areasList[i];
         if(id === index.id){
           printDiv.innerHTML = `<h2>${index.name}</h2>`;
         }
       }
-      printDiv.innerHTML += `<button id="backToAreas">&#x25C0; back</button>`;
+    
+      // printDiv.innerHTML = `<h2 id="${id}">AREA ${id}</h2>`;
+      printDiv.innerHTML = `<div class="area-img${id}-div"><h2 id="${id}">AREA ${id}</h2><button id="backToAreas">&#x25C0; back</button></div>`;
+      // console.log("attractions resolve data", data);
+      // printDiv.innerHTML += `<button id="backToAreas">&#x25C0; back</button>`;
+      console.log("attractions resolve data", attractions);
+
       Object.keys(attractions).forEach((item) =>{
                 var index = (attractions[item]);
                 // console.log(index);
                 if(index.area_id === id && index.hasOwnProperty('times')){
-                    printDiv.innerHTML += `<div><h3 class= "areaAttraction" id=${index.id}>${index.name}</h3><ul><li>Times: ${index.times.join(' // ')}</li></ul></div>`;
+                    printDiv.innerHTML += `<div class="bkgrnd-color-${id}"><h3 class= "areaAttraction" id=${index.id}>${index.name}</h3><ul><li>Times: ${index.times.join(' // ')}</li></ul></div>`;
                 }else if(index.area_id === id){
-                    printDiv.innerHTML += `<div><h3 class= "areaAttraction" id=${index.id}>${index.name}</h3></div>`;
+                    printDiv.innerHTML += `<div class="bkgrnd-color-${id}"><h3 class= "areaAttraction" id=${index.id}>${index.name}</h3></div>`;
                 }
             });
   },
@@ -89,14 +96,14 @@ function attractionDetailsPrint(id){
           console.log("index ID", index.id);
           if(index.id == id){
             if(index.hasOwnProperty('times')){
-              printDiv.innerHTML = `<h2>${index.name}</h2>`;
-              printDiv.innerHTML += `<button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button>`;
-              printDiv.innerHTML += `<h3 class="attractionDetails">${index.description}</h3>`;
-              printDiv.innerHTML += `<ul><li>Times: ${index.times.join(' // ')}</li>`;
+              printDiv.innerHTML = `<div id="attractions-bkgnd-color-${index.area_id}"><h2 id=${index.area_id}>${index.name}</h2><button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button></div>`;
+              // printDiv.innerHTML += `<button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button>`;
+              printDiv.innerHTML += `<div id="details-bkgnd-color-${index.area_id}"><h3 class="attractionDetails-${index.area_id}">${index.description}</h3><ul><li>Times: ${index.times.join(' // ')}</li></div>`;
+              // printDiv.innerHTML += `<ul><li>Times: ${index.times.join(' // ')}</li>`;
             }else{
-              printDiv.innerHTML = `<h2>${index.name}</h2>`;
-              printDiv.innerHTML += `<button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button>`;
-              printDiv.innerHTML += `<h3 class="attractionDetails">${index.description}</h3>`;
+              printDiv.innerHTML = `<div id="attractions-bkgnd-color-${index.area_id}"><h2 id=${index.area_id}>${index.name}</h2><button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button></div>`;
+              // printDiv.innerHTML += `<button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button>`;
+              printDiv.innerHTML += `<div id="details-bkgnd-color-${index.area_id}"><h3 class="attractionDetails-${index.area_id}">${index.description}</h3></div>`;
             }
           }
         });
@@ -134,6 +141,7 @@ function attractionDetailsPrint(id){
         },
         function(areas) {
           console.log("attractionsDetails call fucked up");
+
         }
       );
     }
