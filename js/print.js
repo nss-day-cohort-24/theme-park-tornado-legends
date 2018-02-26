@@ -11,22 +11,29 @@ let areaData = fetchData.areaData;
 let attractionData = fetchData.attractionData;
 let attractionDetails =fetchData.attractionDetails;
 let areas = fetchData.areas;
+let areasList;
+let attractionsList;
+let areasListIndex;
+let attractionsListIndex;
 let printDiv = document.getElementById('print');
+
 
 // let id = 4;
 let counter = 5;
-
+let areasListCounter = 1;
 let backToAreas;
+let printHeader = true;
 
 
 
-// Areas 
+// Print areas to the page after splash page is clicked on. 
 function areasPrint(){
   printDiv.innerHTML = ``;
   areas()
     .then(
       function(areas) {
-        console.log("areas ", areas);
+        areasList = areas;
+        console.log("areas list ", areasList);
         Object.keys(areas).forEach((item)=>{
           var index = (areas[item]);
           console.log(index.id);
@@ -40,37 +47,18 @@ function areasPrint(){
   }
 
 
-function runPrint(){
-    console.log(event);
-    counter++;
-    counter = counter % 9;
-    areaDataPrint(counter);
-    attractionDataPrint(counter);
-}
-
-function areaDataPrint(id){
-areaData(id)
-  // Then gets executed when promise is resolved or rejected
-  .then(
-    // The first callback function will be invoked when you resolve
-    function(areas) {
-      console.log("areas ", areas);
-    },
-    // The second callback function will be invoked when you reject
-    function(areas) {
-      console.log("areaData call fucked up");
-    }
-  );
-}
-
-// Attractions 
+// Print attractions on "back" button from Attraction Details Page
 function attractionDataPrint(id){
   attractionData(id)
   .then(
   (attractions) => {
-      printDiv.innerHTML = `<h2>AREA${id}</h2>`;
+    for( var i = 0; i < areasList.length; i++){
+      var index = areasList[i];
+        if(id === index.id){
+          printDiv.innerHTML = `<h2>${index.name}</h2>`;
+        }
+      }
       printDiv.innerHTML += `<button id="backToAreas">&#x25C0; back</button>`;
-      console.log("attractions resolve data", attractions);
       Object.keys(attractions).forEach((item) =>{
                 var index = (attractions[item]);
                 // console.log(index);
@@ -87,17 +75,19 @@ function attractionDataPrint(id){
   );
 }
 
-//Attraction Details
+// After an area has been chosen, this function is ran to show
+// the details of the chosen attraction within area. 
 function attractionDetailsPrint(id){
   console.log('attraction details print function');
   attractionDetails(id)
     .then(
       function(attractions) {
+        console.log("attractions data", attractions);
         Object.keys(attractions).forEach((item)=>{
           var index = (attractions[item]);
-          if(id == index.id){
-            console.log(index.name);
-            console.log(index.description);
+          console.log("ID parameter", id);
+          console.log("index ID", index.id);
+          if(index.id == id){
             if(index.hasOwnProperty('times')){
               printDiv.innerHTML = `<h2>${index.name}</h2>`;
               printDiv.innerHTML += `<button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button>`;
@@ -117,6 +107,8 @@ function attractionDetailsPrint(id){
     );
   }
 
+
+  // Function to print attractions based on current time. 
   function attractionDetailsTimePrint(id){
     console.log('attraction details print function');
     attractionDetails(id)
@@ -147,4 +139,4 @@ function attractionDetailsPrint(id){
     }
 
 
-  module.exports = {printDiv, areasPrint, attractionDataPrint, attractionDetailsPrint,attractionDetailsTimePrint};
+  module.exports = {printDiv, areasPrint, attractionDataPrint, attractionDetailsPrint,attractionDetailsTimePrint,};
