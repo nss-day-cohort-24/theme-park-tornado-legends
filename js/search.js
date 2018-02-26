@@ -1,15 +1,9 @@
 "use strict";
 
-let searchDisplay = [];
-let searchNames;
-let searchLoc;
 let searchTerm;
 let searchFooter = document.getElementById("footer-nav");
 let printDiv = document.getElementById("print");
 let searchButton = document.getElementById("search-btn");
-let currentName;
-
-let inventory = [];
 
 const searchHead = `
     <div class="headerbkgsearch">
@@ -18,6 +12,7 @@ const searchHead = `
     <button class="btn" id="search-btn">search</button>
     </div>`;
 
+// grabs the firebase data, creates a promise and XMLHttpRequest and passes along the json data
 function loadSearch() {
     console.log('search call');
     return new Promise((resolve, reject) => {
@@ -35,6 +30,9 @@ function loadSearch() {
     });
 }
 
+// sent here either by interaction.js when the search key is pressed or by enterBtn function to run the loadSearch function
+
+// this grabs the data from the resolve, which is the full firebase and loops through the attractions - if the search term is included in the attraction it's printed to the div 
 function onEnter(){
     searchTerm = document.getElementById("searchField").value;
     printDiv.innerHTML = `${searchHead}`;
@@ -60,10 +58,12 @@ function onEnter(){
     );
 }
 
+// interaction.js sends you here first to display the search header
 function printSearchData() {
     printDiv.innerHTML = `${searchHead}`;
 }
 
+// interaction.js send you here when you press your enter key in the search field
 function enterBtn(event) {
     console.log("working");
         if (event.keyCode === 13) {
