@@ -15,6 +15,12 @@ let areaSelect = document.getElementById('print').addEventListener('click', chec
 let timeButton = document.getElementById("footer-nav").addEventListener('click',check);
 
 
+function enterKey(event) {
+    if (event.keyCode === 13) {
+        search.onEnter();
+    }
+}
+
 
 // PRINT DIV ID CHECK
 function check(){
@@ -54,7 +60,10 @@ function check(){
     if (event.target.id === 'search-btn'){
         search.onEnter();
     }
-    if(event.target.id === 'home'){
+    if (event.target.id === 'searchField') {
+        document.getElementById('searchField').addEventListener("keypress", enterKey);
+    }
+        if(event.target.id === 'home'){
         areasPrint();
     }
 }
