@@ -7,6 +7,7 @@ let search = require("./search");
 
 // VARIABLES
 let areasPrint = printer.areasPrint;
+let buildAreasList = printer.buildAreaList;
 let areaDataPrint = printer.areaDataPrint;
 let attractionDataPrint = printer.attractionDataPrint;
 let attractionDetailsPrint = printer.attractionDetailsPrint;
@@ -41,9 +42,9 @@ function check(){
         timeFunc.timeFunction();
     }
     if(event.target.className === 'areaAttraction'){
-        console.log(event.target.className);
-        console.log(event.target.id);
-        attractionDetailsPrint(event.target.id);
+        console.log("area attraction className", event.target.className);
+        console.log("area attraction id", event.target.id);
+        attractionDetailsPrint(parseInt(event.target.id));
     }
     if(event.target.className === 'timeAttraction'){
         console.log(event.target.className);

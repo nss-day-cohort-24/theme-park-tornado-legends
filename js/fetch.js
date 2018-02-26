@@ -10,9 +10,9 @@ require("../lib/node_modules/firebase/database");
 // VARIABLES
 let database;
 let firebaseData;
+let attractionsList; 
 
-
-// AREAS PROMISE 
+// AREAS 
 function areas(){
   // console.log('get areas individual call'); 
 return new Promise((resolve,reject) => {
@@ -31,7 +31,9 @@ return new Promise((resolve,reject) => {
 }
 
 
-// ATTRACTIONS BY ID
+
+
+// ATTRACTIONS
 function attractionDetails(id){
   // console.log('get areas individual call'); 
 return new Promise((resolve,reject) => {
@@ -39,7 +41,8 @@ return new Promise((resolve,reject) => {
   
   loader.addEventListener('load', function(){
     var attractionDetails = JSON.parse(this.responseText);
-    resolve(attractionDetails);
+    attractionsList = attractionDetails;
+    resolve(attractionsList);
   });
   loader.addEventListener('error', function(){
     reject();
@@ -51,7 +54,7 @@ return new Promise((resolve,reject) => {
 
 
 
-// ATTRACTIONS BY ID PROMISE
+// ATTRACTIONS BY ID 
 function attractionData(id){
   // console.log('get area call');
 return new Promise((resolve,reject) => {
@@ -75,4 +78,4 @@ return new Promise((resolve,reject) => {
 
 
 
-module.exports = {attractionData, areas, attractionDetails};
+module.exports = {attractionData, areas, attractionDetails, attractionsList};
