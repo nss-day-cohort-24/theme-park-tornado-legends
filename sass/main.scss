@@ -267,7 +267,7 @@ li {
 footer {
     // display
         background-color: $heading-color;
-        padding: 14px 0 14px 0;
+        // padding: 15px 0 14px 0;
         margin: 0; 
     // flexbox
         display: flex;
@@ -504,8 +504,16 @@ footer a .active {
 
 }
 
-footer#footer-nav a {
-    border: solid red 1px;
-    padding: 1em;
-    margin: -1em;
+// footer#footer-nav a {
+//     border: solid red 1px;
+//     // padding: 1em;
+//     margin: -1em;
+// }
+
+svg#home, svg#clock, svg#search {
+    // border: solid red 1px;
+    padding: 14px;
+    overflow: visible;
+    // margin: -1em;
 }
+
