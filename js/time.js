@@ -132,6 +132,7 @@ function attractionData(){
 }
 
 
+
 function checkTime(checkHour){
   // h = currentTime;
 
