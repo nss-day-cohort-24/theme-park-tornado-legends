@@ -109,8 +109,11 @@ let timeHead = `
 // Finds The Current Time
 function currentTime(){
     let d = new Date();
+    
+// Puts time in workable format
     let c = d.toLocaleTimeString();
     console.log(c);
+    // Grabs only the hours
     h = d.getHours();
     return h;
 
@@ -143,16 +146,21 @@ function attractionData(){
 function checkTime(checkHour){
   // h = currentTime;
 
+  //  If the value of the select box is "current time", then the function will grab the current time and use it for the parameter
  
   if(userHour !== "c"){
     h = userHour;
   }
-  console.log(h);
+
+  
+
+  
+//   compares either the current hour or the selected hour to the attractions hour that we are currently examining
   if (h == checkHour){
     matchArea();
     console.log("yeaaaaaaaa buddddyyy",aId);
 
-
+// If the times match then we push the associated names, times, and location to an array that we will print later on
     namesArray.push(aNames);
 
     indLocArray.push(timeLoc);
@@ -183,38 +191,46 @@ attractionData()
       json_data.forEach((item)=>{
         // console.log("times,",item.times);
         // aTimes.push(item.times);
+        
+ // Runs through each attraction and determines if it has a "times" property
         if(item.hasOwnProperty("times")){
+                        //   If it does then it pushes the times into an array of arrays called aTimes
               let aTimes = [];
+                          // Additionally, stores the names, locations, and Id of those attractions into variables for later use
               aTimes.push(item.times);
               aNames = item.name;
               aLoc = item.area_id;
               aId = item.id;
 
 
-
+// Some time properties have more than one time, so in order to grab each one, I loop through each array
               
 
 
                       for(let i=0;i < aTimes.length;i++){
                       let a = aTimes[i];
-
+// Originally "a" will grab the first array to examine, then will continue through the rest of the arrays, 
+// as the function runs and resets
 
                             for(let z=0;z<a.length;z++){
-
+// To grab each time in the arrays, we do another loop through each individual array
                                         let a = aTimes[i];
+
                                         let indTime = a[z];
                                         indHr = indTime.substring(0, 2);
-
+                                    // grab first two digits (the time) and if its a one digit hour, then it removes the colon
                                         if(indHr.includes(":")){
                                           indHr = indHr.slice(0, 1);
                                           // console.log("new indHr", indHr);
                                         }
+                                        // converts it to military time
                                         if(a[z].includes("PM") && indHr !== "12"){
                                           indHr = parseInt(indHr);
                                           indHr = indHr + 12;
                                           indHr = indHr.toString();
                                       
                                         }
+                                        // Runs the check time function for every single time that we examine
                                     checkTime(indHr);
                                     
                             }
@@ -235,11 +251,12 @@ attractionData()
 
 function printTimeData() {
   h = parseInt(h);
-
+// We present it in the format "hour - hour" so h2 is the second hour
   let h2 = h+1;
   let hdisp = h;
   let h2disp = h2;
   let pm ="am";
+//   turns the time from military to standard
   if (h>12){
       hdisp = hdisp- 12;
   }
@@ -247,7 +264,7 @@ function printTimeData() {
       h2disp = h2disp - 12;
       pm = "pm";
   }
-
+// This is the loop that prints all the content within the the arrays
   printDiv.innerHTML = `${timeHead}`;
   printDiv.innerHTML += `<h1>${hdisp}-${h2disp+pm}</h1>`;
     for (let q=0;q<namesArray.length;q++){
@@ -263,6 +280,7 @@ function printTimeData() {
 
 
 // Determines selected hour and then runs the main timeFunction
+
 
 function changeHour(){
 userHour = document.getElementById("user-hour").value;
