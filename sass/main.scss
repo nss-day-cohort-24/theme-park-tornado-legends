@@ -477,6 +477,17 @@ footer a .active {
     // float: left;
 }
 
+.backToTime {
+    border: solid 3px #0058FF;
+    border-radius: 12px;
+    font-family: "Press Start 2P", "Courier New", Courier, monospace;
+    font-size: 14px;
+    padding: .4em 1em;
+    margin: -3em 6em 1em 9em;
+    background-color: rgba(255, 255, 255, 0.9);
+    line-height: 1.3;
+}
+
 .backToAttractions {
     border: solid 3px #0058FF;
     border-radius: 12px;
