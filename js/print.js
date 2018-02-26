@@ -106,12 +106,12 @@ function attractionDetailsPrint(id){
             if(index.hasOwnProperty('times')){
               printDiv.innerHTML = `<div id="attractions-bkgnd-color-${index.area_id}"><h2 id=${index.area_id}>${index.name}</h2><button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button></div>`;
               // printDiv.innerHTML += `<button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button>`;
-              printDiv.innerHTML += `<h3 class="attractionDetails">${index.description}</h3>`;
-              printDiv.innerHTML += `<ul><li>Times: ${index.times.join(' // ')}</li>`;
+              printDiv.innerHTML += `<div id="details-bkgnd-color-${index.area_id}"><h3 class="attractionDetails-${index.area_id}">${index.description}</h3><ul><li>Times: ${index.times.join(' // ')}</li></div>`;
+              // printDiv.innerHTML += `<ul><li>Times: ${index.times.join(' // ')}</li>`;
             }else{
               printDiv.innerHTML = `<div id="attractions-bkgnd-color-${index.area_id}"><h2 id=${index.area_id}>${index.name}</h2><button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button></div>`;
               // printDiv.innerHTML += `<button class="backToAttractions" id=${index.area_id}>&#x25C0; back</button>`;
-              printDiv.innerHTML += `<h3 class="attractionDetails">${index.description}</h3>`;
+              printDiv.innerHTML += `<div id="details-bkgnd-color-${index.area_id}"><h3 class="attractionDetails-${index.area_id}">${index.description}</h3></div>`;
             }
           }
         });

@@ -81,39 +81,34 @@ li {
     list-style-type: none;
 }
 
-// h2[id='1'] {
-//     color: $a1;
-// }
-
-.bkgrnd-color-1, .bkgrnd-color-1 + ul {
+#details-bkgnd-color-1, .bkgrnd-color-1, .bkgrnd-color-1 + ul {
     background-color: $a1;
 }
 
-
+#details-bkgnd-color-1 {
+    height: 30em;
+}
 
 .area-img1-div{
     height: 12em;
-    background-image: url("/images/area_1.png");
-    background-repeat: no-repeat;
-    background-size: 27em;
-    background-position: -1.6em -4.6em;
-    // check
-}
-#attractions-bkgnd-color-1{
-    background-color: $a1;
     background-image: url(/images/area_1.png);
     background-repeat: no-repeat;
-    background-size: 27em;
-    background-position: -1.6em -4.6em;
+    background-size: 29em;
+    background-position: -1.6em -1.8em;
 }
-    
+#attractions-bkgnd-color-1{
+    background-image: url(/images/area_1.png);
+    background-repeat: no-repeat;
+    background-size: 29em;
+    background-position: -1.6em -1.8em;
+}
 
-// h2[id='2'] {
-//     color: $a2;
-// }
-
-.bkgrnd-color-2, .bkgrnd-color-2 + ul {
+#details-bkgnd-color-2, .bkgrnd-color-2, .bkgrnd-color-2 + ul {
     background-color: $a2;
+}
+
+#details-bkgnd-color-2 {
+    height: 30em;
 }
 
 .area-img2-div{
@@ -131,12 +126,12 @@ li {
     background-position: -2em -2.1em;
 }
 
-// h2[id='3'] {
-//     color: $a3;
-// }
-
-.bkgrnd-color-3, .bkgrnd-color-3 + ul {
+#details-bkgnd-color-3, .bkgrnd-color-3, .bkgrnd-color-3 + ul {
     background-color: $a3;
+}
+
+#details-bkgnd-color-3 {
+    height: 30em;
 }
 
 .area-img3-div{
@@ -145,8 +140,6 @@ li {
     background-repeat: no-repeat;
     background-size: 27em;
     background-position: -1.6em -3em;
-
-
 }
 
 #attractions-bkgnd-color-3{
@@ -156,61 +149,57 @@ li {
     background-position: -1.6em -3em;
 }
 
-// h2[id='4'] {
-//     color: $a4;
-// }
-
-.bkgrnd-color-4, .bkgrnd-color-4 h3 + ul {
+#details-bkgnd-color-4, .bkgrnd-color-4, .bkgrnd-color-4 + ul {
     background-color: $a4;
+}
+
+#details-bkgnd-color-4 {
+    height: 30em;
 }
 
 .area-img4-div{
     height: 12em;
-    background-image: url("/images/area_4.png");
+    background-image: url(/images/area_4.png);
     background-repeat: no-repeat;
-    background-size: 26.6em;
-    background-position: -1.7em -4em;
-        // check
-
+    background-size: 32em;
+    background-position: -1.7em -2em;
 }
 
 #attractions-bkgnd-color-4{
     background-image: url(/images/area_4.png);
     background-repeat: no-repeat;
-    background-size: 26.6em;
-    background-position: -1.7em -4em;
+    background-size: 32em;
+    background-position: -1.7em -2em;
 }
 
-// h2[id='5'] {
-//     color: $a5;
-// }
-
-.bkgrnd-color-5, .bkgrnd-color-5 h3 + ul {
+#details-bkgnd-color-5, .bkgrnd-color-5, .bkgrnd-color-5 + ul {
     background-color: $a5;
+}
+
+#details-bkgnd-color-5 {
+    height: 30em;
 }
 
 .area-img5-div{
     height: 12em;
-    background-image: url("/images/area_5.png");
+    background-image: url(/images/area_5.png);
     background-repeat: no-repeat;
-    background-size: 28em;
-    background-position: -2em -1.9em;
-        // check
-
+    background-size: 35em;
+    background-position: -7em -2em;
 }
 #attractions-bkgnd-color-5{
     background-image: url(/images/area_5.png);
     background-repeat: no-repeat;
-    background-size: 28em;
-    background-position: -2em -1.9em;
+    background-size: 35em;
+    background-position: -7em -2em;
 }
 
-// h2[id='6'] {
-//     color: $a6;
-// }
-
-.bkgrnd-color-6, .bkgrnd-color-6 h3 + ul {
+#details-bkgnd-color-6, .bkgrnd-color-6, .bkgrnd-color-6 + ul {
     background-color: $a6;
+}
+
+#details-bkgnd-color-6 {
+    height: 30em;
 }
 
 .area-img6-div{
@@ -219,9 +208,8 @@ li {
     background-repeat: no-repeat;
     background-size: 30em;
     background-position: -2em -3em;
-        // check
-
 }
+
 #attractions-bkgnd-color-6{
     background-image: url(/images/area_6.png);
     background-repeat: no-repeat;
@@ -230,12 +218,12 @@ li {
 
 }
 
-// h2[id='7'] {
-//     color: $a7;
-// }
-
-.bkgrnd-color-7, .bkgrnd-color-7 h3 + ul {
+#details-bkgnd-color-7, .bkgrnd-color-7, .bkgrnd-color-7 + ul {
     background-color: $a7;
+}
+
+#details-bkgnd-color-7 {
+    height: 30em;
 }
 
 .area-img7-div{
@@ -244,10 +232,6 @@ li {
     background-repeat: no-repeat;
     background-size: 30.6em;
     background-position: -3em -3em;
-
-    // check
-
-
 }
 #attractions-bkgnd-color-7{
     background-image: url(/images/area_7.png);
@@ -256,13 +240,14 @@ li {
     background-position: -3em -3em;
 }
 
-// h2[id='8'] {
-//     color: $a8;
-// }
-
-.bkgrnd-color-8, .bkgrnd-color-8 h3 + ul {
+#details-bkgnd-color-8, .bkgrnd-color-8, .bkgrnd-color-8 + ul {
     background-color: $a8;
 }
+
+#details-bkgnd-color-8 {
+    height: 30em;
+}
+
 
 .area-img8-div{
     height: 12em;
