@@ -56,16 +56,12 @@ function attractionDataPrint(id){
     for( var i = 0; i < areasList.length; i++){
       var index = areasList[i];
         if(id === index.id){
-          printDiv.innerHTML = `<h2>${index.name}</h2>`;
+          printDiv.innerHTML = `<div class="area-img${id}-div"><h2>${index.name}</h2><button id="backToAreas">&#x25C0; back</button></div>`;
+          // printDiv.innerHTML = ``;
         }
       }
     
-      // printDiv.innerHTML = `<h2 id="${id}">AREA ${id}</h2>`;
-      printDiv.innerHTML = `<div class="area-img${id}-div"><h2 id="${id}">AREA ${id}</h2><button id="backToAreas">&#x25C0; back</button></div>`;
-      // console.log("attractions resolve data", data);
-      // printDiv.innerHTML += `<button id="backToAreas">&#x25C0; back</button>`;
       console.log("attractions resolve data", attractions);
-
       Object.keys(attractions).forEach((item) =>{
                 var index = (attractions[item]);
                 // console.log(index);
